@@ -27,11 +27,8 @@ public class Personaje : MonoBehaviour
 	public float speed = 75f;
 	public HeltBar Barra_vida;
 
-	
-	
-
 	private Rigidbody2D rb2d;
-	
+	public Joystick joystickM;
 	void Start()
 	{
 		stats =new Data_Personaje(true);
@@ -91,6 +88,10 @@ public class Personaje : MonoBehaviour
 		if (Input.GetAxis("Horizontal") != 0)
 		{
 			h = Input.GetAxis("Horizontal");
+		}
+		else if(joystickM.Horizontal!=0) 
+		{
+			h = joystickM.Horizontal;
 		}
 
 		
