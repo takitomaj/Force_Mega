@@ -6,13 +6,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Experimental.UIElements;
 using UnityEngine.UI;
+//using NUnit.Framework.Internal;
 //using UnityEngine.Networking;
 
 
 public class Personaje : MonoBehaviour
 {
 	//activar alpha =255
-	private const int _ActivarAlpha= 255;
+	private const int _ActivarAlpha = 255;
 	//variablesde prueba
 	int pos = 1;
 	int countTest = 0;
@@ -22,79 +23,100 @@ public class Personaje : MonoBehaviour
 	public UnityEngine.UI.Image Botas;
 
 	public Data_Personaje stats;
-
+	public HeltBar Barra_vida;
+	//movimiento
 	public float maxSpeed = 3f;
 	public float speed = 75f;
-	public HeltBar Barra_vida;
-
+	public int JumpForce = 800;
+	public Boolean salto = false;
 	private Rigidbody2D rb2d;
 	public Joystick joystickM;
 	void Start()
 	{
-		stats =new Data_Personaje(true);
+		stats = new Data_Personaje(true);
 		rb2d = GetComponent<Rigidbody2D>();
 		Barra_vida.SetMax_helth(stats.vida_maxima);
 		Barra_vida.SetHelt(stats.Vida);
 		casco.color = new Color(255, 255, 255, 0);
 		peto.color = new Color(255, 255, 255, 0);
 
-		maxSpeed = 3.0f+stats.Movimiento1;
+		maxSpeed = 3.0f + stats.Movimiento1;
 
 	}
-	
+	public void Shoot()
+	{
+		Recibir_Dano(10);
+	}
+	public void melee_atack()
+	{
+		testItems();
+	}
+	public void testItems() {
+		if (pos == 1)
+		{
+			casco.color = new Color(stats.colores[countTest, 0],//Rojo  R
+									stats.colores[countTest, 1],//Verde G
+									stats.colores[countTest, 2],//Azul  B
+									1);                         //Alpha AGGGGGGGGGG
+			peto.color = new Color(stats.colores[countTest, 0],//Rojo  R
+									stats.colores[countTest, 1],//Verde G
+									stats.colores[countTest, 2],//Azul  B
+									1);                         //Alpha AGGGGGGGGGG
+
+
+
+			if (countTest == 2) { countTest = 0; }
+			else { countTest++; }
+
+			pos = 0;
+		}
+		else
+		{
+
+			//quitar
+			casco.color = new Color(255, 255, 255, 0);
+			pos = 1;
+
+		}
+	}
+
 	void Update()
 	{
-		
-		if (Input.GetKeyDown(KeyCode.Space))
-		{
-			//disparp
-			//CmdDisparo();
-			Recibir_Dano(10);
-			if (pos == 1)
-			{
-				casco.color = new Color(stats.colores[countTest, 0],//Rojo  R
-									    stats.colores[countTest, 1],//Verde G
-										stats.colores[countTest, 2],//Azul  B
-										1);                         //Alpha AGGGGGGGGGG
-				peto.color = new Color(stats.colores[countTest, 0],//Rojo  R
-										stats.colores[countTest, 1],//Verde G
-										stats.colores[countTest, 2],//Azul  B
-										1);                         //Alpha AGGGGGGGGGG
 
 
-
-				if (countTest == 2){countTest = 0;}
-				else{countTest++;}
-				
-				pos = 0;
-			}
-			else
-			{
-				
-				//quitar
-				casco.color = new Color(255, 255, 255, 0);
-				pos = 1;
-				
-			}
-		}
 
 	}
+
+
 	//192.168.1.5
 	void FixedUpdate()
 	{
 		float h = 0f;
 
-
+		//movimiento horisontal
 		if (Input.GetAxis("Horizontal") != 0)
 		{
 			h = Input.GetAxis("Horizontal");
 		}
-		else if(joystickM.Horizontal!=0) 
+		else if (joystickM.Horizontal != 0)
 		{
 			h = joystickM.Horizontal;
 		}
+		//salto
+		if (Input.GetKeyDown(KeyCode.Space))
+		{
+			//disparp
+			//CmdDisparo();
+			salto = true;
+		}
+		Debug.Log(joystickM.Vertical);
+		if (joystickM.Vertical >= 0.5f)
+		{
+			//saltar
+			salto = true;
+		}
 
-		
+
 
 
 		rb2d.AddForce(Vector2.right * speed * h);
@@ -112,6 +134,12 @@ public class Personaje : MonoBehaviour
 			transform.localScale = new Vector3(-1f, 1f, 1f);
 		}
 
+		if (salto)
+		{
+			rb2d.AddForce(Vector2.up * JumpForce);
+			salto = false;
+		}
+
 	}
 	public void Recibir_Dano(int dano)
 	{
@@ -119,5 +147,7 @@ public class Personaje : MonoBehaviour
 		Barra_vida.SetHelt(stats.Vida);
 	}
 
+
+	
 
 }

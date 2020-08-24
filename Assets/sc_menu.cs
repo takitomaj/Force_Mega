@@ -13,4 +13,13 @@ public class sc_menu : MonoBehaviour
     {
         SceneManager.LoadScene(2);
     }
+    public void MainMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
+    public void menu()
+    {
+        SceneManager.LoadScene(0);
+    }
 }
+    
