@@ -151,5 +151,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 385c9ceb2ecb6354ca6ec04e8c18232d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  equipada: 1
   RB_Arma: {fileID: 0}
   jumpPower: 9.25

@@ -31,8 +31,12 @@ public class Personaje : MonoBehaviour
 	public Boolean salto = false;
 	private Rigidbody2D rb2d;
 	public Joystick joystickM;
+	//interaccion Touch
+	public Camera cam;
+	public Interacuar Focus;
 	void Start()
 	{
+		cam = Camera.main;
 		stats = new Data_Personaje(true);
 		rb2d = GetComponent<Rigidbody2D>();
 		Barra_vida.SetMax_helth(stats.vida_maxima);
@@ -82,11 +86,54 @@ public class Personaje : MonoBehaviour
 
 	void Update()
 	{
+		//seting de touch y mouse
+		if (Input.GetMouseButtonDown(0))
+		{
 
+			Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+			RaycastHit hit;
+			if (Physics.Raycast(ray, out hit, 100))
+			{
+				
+					QuitFocus();
+				
+			}
+		}
+		if (Input.GetMouseButtonDown(1))
+		{
+
+			Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+			RaycastHit hit;
+			if (Physics.Raycast(ray, out hit, 100))
+			{
+				Interacuar inter = hit.collider.GetComponent<Interacuar>();
+				if (inter != null)
+				{
+					SetFocus(inter);
+				}
+			}
+		}
 
 
 	}
-
+	public void SetFocus(Interacuar newInter)
+	{
+		if (Focus != newInter) {
+			if (Focus!=null) 
+			{ 
+				Focus = newInter;
+				newInter.OnFocus(transform);
+			} 
+		}
+	}
+	public void QuitFocus()
+	{
+		if (Focus != null) 
+		{
+			Focus = null;
+		}
+	}
+	
 
 	//192.168.1.5
 	void FixedUpdate()
@@ -109,7 +156,7 @@ public class Personaje : MonoBehaviour
 			//CmdDisparo();
 			salto = true;
 		}
-		Debug.Log(joystickM.Vertical);
+		
 		if (joystickM.Vertical >= 0.5f)
 		{
 			//saltar
@@ -140,6 +187,10 @@ public class Personaje : MonoBehaviour
 			salto = false;
 		}
 
+		
+	
+	
+	
 	}
 	public void Recibir_Dano(int dano)
 	{
