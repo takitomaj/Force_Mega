@@ -18,6 +18,7 @@ public class sc_Item_pickUp : Interacuar
     }
     public void OnMouseDown()
     {
+        base.Interactuar();
         Debug.Log("Recojiendo" + item.nombre);
         //FindObjectOfType<sc_Inventario>().AddItem(item);// este pedazo del codico sin Singleton
         if (sc_Inventario.Instancia.AddItem(item))

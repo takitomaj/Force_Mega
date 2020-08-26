@@ -41,9 +41,5 @@ public class Interacuar : MonoBehaviour
         Debug.Log("Interactuar con"+ transform.name); 
     }
 
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position,radioInteraccion);
-    }
+    
 }

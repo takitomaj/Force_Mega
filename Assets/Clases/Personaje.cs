@@ -34,8 +34,11 @@ public class Personaje : MonoBehaviour
 	//interaccion Touch
 	public Camera cam;
 	public Interacuar Focus;
+	public Canvas Inventario_Equipo;
+	
 	void Start()
 	{
+		Inventario_Equipo.enabled = false;
 		cam = Camera.main;
 		stats = new Data_Personaje(true);
 		rb2d = GetComponent<Rigidbody2D>();
@@ -50,6 +53,18 @@ public class Personaje : MonoBehaviour
 	public void Shoot()
 	{
 		Recibir_Dano(10);
+	}
+	public void InventarioEquipo() 
+	{
+		if (Inventario_Equipo.isActiveAndEnabled) 
+		{
+			Inventario_Equipo.enabled = false;
+			
+		} else 
+		{
+			Inventario_Equipo.enabled = true;
+			
+		}
 	}
 	public void melee_atack()
 	{
