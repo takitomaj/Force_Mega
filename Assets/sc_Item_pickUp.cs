@@ -4,7 +4,14 @@ using UnityEngine;
 public class sc_Item_pickUp : Interacuar
 {
     public Item item;
-    
+    SpriteRenderer sprite;
+
+    public void Start()
+    {
+        sprite = GetComponent<SpriteRenderer>();
+        sprite.color = new Color(item.color[0], item.color[1], item.color[2], item.color[3]);
+
+    }
     public override void Interactuar()
     {
         base.Interactuar();

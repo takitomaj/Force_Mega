@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using UnityEngine;
 [System.Serializable]
 public class Data_Personaje 
@@ -37,7 +38,17 @@ public class Data_Personaje
     int Rango = 0;
     float Movimiento = 0;
     int esquivar = 0;
+    public List<Item> ineventario = new List<Item>();
+    public Item[] equipamiento = new Item[4];
 
+    public void SetInventstio(List<Item> ineventario_nuevo) 
+    {
+        ineventario = ineventario_nuevo;
+    }
+    public void SetEquipo(Item[] Equipo) 
+    {
+        equipamiento = Equipo;
+    }
     public Data_Personaje(string V_nombre ,int V_lvl, int V_Exp, int V_Next_lvl, int V_vida,int V_VidaMaxima, int V_Fuerza, int V_Velocidad, int V_Constitucion,
                           int V_armadura, int V_arma_melee, int V_arma_rango, int V_botas, int V_accsesorio1, int V_accsesorio2, int V_accsesorio3,
                           int[,] V_Colores) {
@@ -61,7 +72,7 @@ public class Data_Personaje
         colores = V_Colores;// new int[3,3] { { 1, 2 ,1}, { 3, 4,1 }, { 5, 6,1 }};
         Calcular();
     }
-
+    
     public Data_Personaje(bool ModoPrueba)
     {
         if (ModoPrueba) {

@@ -10,23 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 916537bd5b622914b88f22edf99c6c74, type: 3}
-  m_Name: canon_Item
+  m_Name: peto
   m_EditorClassIdentifier: 
-  nombre: Canon
-  ID: 0
+  nombre: peto_prueba
+  ID: 1
   IDtipo: 0
   Tipo: item
-  icono: {fileID: 21300002, guid: df2533cbebf9287449fffc88f4384764, type: 3}
+  icono: {fileID: 21300002, guid: aca23560410feb740856c00aa669a998, type: 3}
   IsDefault: 0
-  color: ff0000000000000000000000ff000000
+  color: 000000000000000000000000ff000000
   IsConsumible: 0
   restauraVida: 0
   IsEquipable: 1
   IsCasco: 0
-  IsPeto: 0
+  IsPeto: 1
   IsMeleeW: 0
-  IsRangoW: 1
-  ModFuerza: -1
-  ModConstitucion: 1
-  ModVelocidad: 2
-  Dano: 20
+  IsRangoW: 0
+  ModFuerza: 0
+  ModConstitucion: 30
+  ModVelocidad: -4
+  Dano: 0

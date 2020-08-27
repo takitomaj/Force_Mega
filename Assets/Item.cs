@@ -34,6 +34,7 @@ public class Item : ScriptableObject
         //agrebar lo que pasa
         Debug.Log("usaste Item : " + nombre);
     }
+    
    
 
 

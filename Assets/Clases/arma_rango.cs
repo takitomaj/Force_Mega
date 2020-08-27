@@ -2,15 +2,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class arma_rango : MonoBehaviour
 {
     public Boolean equipada = true;
     public Rigidbody2D RB_Arma;
+
     public float jumpPower = 9.25f;
     // Start is called before the first frame update
     void Start()
     {
+
+
         if (!equipada) 
         { 
             RB_Arma = GetComponent<Rigidbody2D>();

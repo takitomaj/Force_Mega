@@ -44,8 +44,8 @@ public class Personaje : MonoBehaviour
 		rb2d = GetComponent<Rigidbody2D>();
 		Barra_vida.SetMax_helth(stats.vida_maxima);
 		Barra_vida.SetHelt(stats.Vida);
-		casco.color = new Color(255, 255, 255, 0);
-		peto.color = new Color(255, 255, 255, 0);
+		//casco.color = new Color(255, 255, 255, 0);
+		//peto.color = new Color(255, 255, 255, 0);
 
 		maxSpeed = 3.0f + stats.Movimiento1;
 
@@ -63,41 +63,14 @@ public class Personaje : MonoBehaviour
 		} else 
 		{
 			Inventario_Equipo.enabled = true;
-			
+			 
 		}
 	}
 	public void melee_atack()
 	{
-		testItems();
+		//testItems();
 	}
-	public void testItems() {
-		if (pos == 1)
-		{
-			casco.color = new Color(stats.colores[countTest, 0],//Rojo  R
-									stats.colores[countTest, 1],//Verde G
-									stats.colores[countTest, 2],//Azul  B
-									1);                         //Alpha AGGGGGGGGGG
-			peto.color = new Color(stats.colores[countTest, 0],//Rojo  R
-									stats.colores[countTest, 1],//Verde G
-									stats.colores[countTest, 2],//Azul  B
-									1);                         //Alpha AGGGGGGGGGG
-
-
-
-			if (countTest == 2) { countTest = 0; }
-			else { countTest++; }
-
-			pos = 0;
-		}
-		else
-		{
-
-			//quitar
-			casco.color = new Color(255, 255, 255, 0);
-			pos = 1;
-
-		}
-	}
+	
 
 	void Update()
 	{
