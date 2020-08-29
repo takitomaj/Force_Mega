@@ -156,6 +156,12 @@ public class sc_slot_mocochila : MonoBehaviour
 
         //txt_status.text = status;
     }
+    public void equipoToInventario(int equipo) 
+    {
+        sc_equipamiento.Instancia.Remove(equipo);
+        sc_Inventario.Instancia.AddItem(item);
+        Removeitem();
+    }
 
     void Update()
     {

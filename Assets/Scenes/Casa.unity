@@ -229,6 +229,16 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5289425316441695384, guid: 0df9de13717f6dc469b8db5fbacd4177,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: equipoToInventario
+      objectReference: {fileID: 0}
+    - target: {fileID: 5289425316441695384, guid: 0df9de13717f6dc469b8db5fbacd4177,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0df9de13717f6dc469b8db5fbacd4177, type: 3}
 --- !u!224 &7413850 stripped
@@ -478,6 +488,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5289425316441695384, guid: 0df9de13717f6dc469b8db5fbacd4177,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: equipoToInventario
+      objectReference: {fileID: 0}
+    - target: {fileID: 5289425316441695384, guid: 0df9de13717f6dc469b8db5fbacd4177,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5289425316441695384, guid: 0df9de13717f6dc469b8db5fbacd4177,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0df9de13717f6dc469b8db5fbacd4177, type: 3}
@@ -1472,6 +1497,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5289425316441695384, guid: 0df9de13717f6dc469b8db5fbacd4177,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: equipoToInventario
+      objectReference: {fileID: 0}
+    - target: {fileID: 5289425316441695384, guid: 0df9de13717f6dc469b8db5fbacd4177,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5289425316441695384, guid: 0df9de13717f6dc469b8db5fbacd4177,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0df9de13717f6dc469b8db5fbacd4177, type: 3}
@@ -3675,6 +3715,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5289425316441695384, guid: 0df9de13717f6dc469b8db5fbacd4177,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: equipoToInventario
+      objectReference: {fileID: 0}
+    - target: {fileID: 5289425316441695384, guid: 0df9de13717f6dc469b8db5fbacd4177,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5289425316441695384, guid: 0df9de13717f6dc469b8db5fbacd4177,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0df9de13717f6dc469b8db5fbacd4177, type: 3}

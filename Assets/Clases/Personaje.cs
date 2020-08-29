@@ -202,14 +202,14 @@ public class Personaje : MonoBehaviour
 	{
 		
 		serializador.SavePersonaje(stats);
-		XML_serialisador xml = new XML_serialisador();
+		//XML_serialisador xml = new XML_serialisador();
 		//xml.EscrivirXML(sc_Inventario.Instancia.items[0]);
 		//serializador.saveInventario();
 	}
 	public void loadStatus()
 	{
 		stats = serializador.LoadPersonaje();
-		XML_serialisador xml = new XML_serialisador();
+		//XML_serialisador xml = new XML_serialisador();
 		
 		//sc_Inventario.Instancia.AddItem(xml.leerXML());
 		//Barra_vida.SetMax_helth(stats.vida_maxima);

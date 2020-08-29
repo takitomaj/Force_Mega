@@ -103,23 +103,7 @@ public class sc_equipamiento : MonoBehaviour
 
     public void Remove(int id) 
     {
-        Item salida = null;
-        int cout = sc_Inventario.Instancia.items.Count;
-        if (cout >= 15)
-        {
-            Debug.Log("Inventario Lleno");
-        }
-        else
-        {
-            salida = items[id];
-            items[id] = null;
-            sc_Inventario.Instancia.AddItem(salida);
-        }
-
-        if (onItemChangedCallBack != null)
-        {
-            onItemChangedCallBack.Invoke();
-        }
+        sc_equipamiento.Instancia.items[id] = null;
     }
     void Start()
     {
