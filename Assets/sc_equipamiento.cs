@@ -1,11 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Experimental.PlayerLoop;
+using UnityEngine.UI;
 
 public class sc_equipamiento : MonoBehaviour
 {
     #region Singelton
     public static sc_equipamiento Instancia;
+    public Transform jugador;
+    Personaje Personaje;
+    public Text statusText;
     void Awake()
     {
         if (Instancia != null)
@@ -109,10 +114,59 @@ public class sc_equipamiento : MonoBehaviour
     {
         
     }
+    public int getModConstitucion()
+    {
+        int salida = 0;
+        for (int i = 0; i <= 3; i++)
+        {
+            if (items[i] != null)
+            {
+                salida = salida + items[i].ModConstitucion;
+            }
+        }
+        return salida;
+    }
+    public int getModVelocidad()
+    {
+        int salida = 0;
+        for (int i = 0; i <= 3; i++)
+        {
+            if (items[i] != null)
+            {
+                salida = salida + items[i].ModVelocidad;
+            }
+        }
+        return salida;
+    }
+    public int getModFuerza() 
+    {
+        int salida = 0;
+        for (int i = 0; i <= 3; i++)
+        {
+            if (items[i] != null) { 
+            salida = salida + items[i].ModFuerza; 
+            }
+        }
+        return salida;
+    }
+    public void UpdateStatus()
+    {
+        Personaje = jugador.GetComponent<Personaje>();
+        statusText.text = Personaje.stats.Nombre;
+        statusText.text = statusText.text + "\n Vida:  " + Personaje.stats.vida + " / " + Personaje.stats.vida_maxima ;
+        int sumaFuerza = Personaje.stats.Fuerza + getModFuerza();
+        int sumaConstitucion = Personaje.stats.Constitucion + getModConstitucion();
+        int sumaVel = Personaje.stats.Velocidad + getModVelocidad();
 
+        statusText.text = statusText.text+  "\n frz.  :  "   + getModFuerza() +" + "+ Personaje.stats.Fuerza + "  = "+sumaFuerza+ "" ;
+        statusText.text = statusText.text + "\n con.  :  " + getModConstitucion() + " + " + Personaje.stats.Constitucion + "  = " + sumaConstitucion + "";
+        statusText.text = statusText.text + "\n vel.  :  " + getModVelocidad() + " + " + Personaje.stats.Velocidad + "  = " + sumaVel + "";
+
+    }
     // Update is called once per frame
     void Update()
     {
+        UpdateStatus();
         
     }
 }
