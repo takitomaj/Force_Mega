@@ -12,8 +12,8 @@ using UnityEngine.UI;
 
 public class Personaje : MonoBehaviour
 {
-	//activar alpha =255
-	private const int _ActivarAlpha = 255;
+	
+	
 	//variablesde prueba
 	int pos = 1;
 	int countTest = 0;
@@ -41,19 +41,20 @@ public class Personaje : MonoBehaviour
 		Inventario_Equipo.enabled = false;
 		cam = Camera.main;
 		stats = new Data_Personaje(true);
+		
+
 		rb2d = GetComponent<Rigidbody2D>();
 		Barra_vida.SetMax_helth(stats.vida_maxima);
-		Barra_vida.SetHelt(stats.Vida);
-		//casco.color = new Color(255, 255, 255, 0);
-		//peto.color = new Color(255, 255, 255, 0);
-
-		maxSpeed = 3.0f + stats.Movimiento1;
+		Barra_vida.SetHelt(stats.vida);
+		
+		maxSpeed = 3.0f + stats.Movimiento;
 
 	}
 	public void Shoot()
 	{
 		Recibir_Dano(10);
 	}
+	
 	public void InventarioEquipo() 
 	{
 		if (Inventario_Equipo.isActiveAndEnabled) 
@@ -162,31 +163,61 @@ public class Personaje : MonoBehaviour
 
 		if (h > 0.1f)
 		{
+			//transform.Rotate(new Vector3(1f, 1f, 1f));
 			transform.localScale = new Vector3(1f, 1f, 1f);
 		}
 		else if (h < -0.1f)
 		{
+			//transform.Rotate(new Vector3(1f, 1f, 1f));
 			transform.localScale = new Vector3(-1f, 1f, 1f);
 		}
 
 		if (salto)
 		{
-			rb2d.AddForce(Vector2.up * JumpForce);
+			rb2d.AddForce(Vector2.up * JumpForce );
 			salto = false;
 		}
-
-		
-	
-	
-	
 	}
 	public void Recibir_Dano(int dano)
 	{
-		stats.Vida = stats.Vida - dano;
-		Barra_vida.SetHelt(stats.Vida);
+		stats.vida = stats.vida - dano;
+		Barra_vida.SetHelt(stats.vida);
+	}
+	public void Recibir_vida(int vidat) 
+	{
+		
+		stats.vida = stats.vida + vidat;
+		if (stats.vida <= stats.vida_maxima) 
+		{
+			Barra_vida.SetHelt(stats.vida);
+		}
+		else if(stats.vida > stats.vida_maxima) 
+		{ 
+			stats.vida = stats.vida_maxima;
+			Barra_vida.SetHelt(stats.vida);
+		}
 	}
 
-
+	public void saveStatus()
+	{
+		
+		serializador.SavePersonaje(stats);
+		XML_serialisador xml = new XML_serialisador();
+		//xml.EscrivirXML(sc_Inventario.Instancia.items[0]);
+		//serializador.saveInventario();
+	}
+	public void loadStatus()
+	{
+		stats = serializador.LoadPersonaje();
+		XML_serialisador xml = new XML_serialisador();
+		
+		//sc_Inventario.Instancia.AddItem(xml.leerXML());
+		//Barra_vida.SetMax_helth(stats.vida_maxima);
+		//Barra_vida.SetHelt(stats.vida);
+		//maxSpeed = 3.0f + stats.Movimiento;
+		//serializador.loadInventario();
+	}
 	
+
 
 }

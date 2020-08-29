@@ -3,57 +3,49 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using UnityEngine;
 [System.Serializable]
-public class Data_Personaje 
-{  
-    string Nombre = "";
+public class Data_Personaje
+{
+    public string Nombre = "";
     //niveles
-    int lvl;
-    int Exp = 0;
-    int Next_lvl = 0;
-    
+    public int lvl;
+    public int Exp = 0;
+    public int Next_lvl = 0;
+
     //Status
 
-    public int vida_maxima=0;
-    int perisia_vitalidad;//entre 0 a 10
-    int Fuerza = 0;
-    int perisia_Fuerza;//entre 0 a 10
-    int Velocidad = 0;
-    int perisia_Velocidad;//entre 0 a 10
-    int Constitucion =0;
-    int perisia_constitucion;//entre 0 a 10
+    public int vida_maxima = 100;
+    public int perisia_vitalidad;//entre 0 a 10
+    public int Fuerza = 0;
+    public int perisia_Fuerza;//entre 0 a 10
+    public int Velocidad = 0;
+    public int perisia_Velocidad;//entre 0 a 10
+    public int Constitucion = 0;
+    public int perisia_constitucion;//entre 0 a 10
     //Equipo
-    int armadura = 0;
-    int arma_melee = 0;
-    int arma_rango = 0;
-    int botas = 0;
-    int accsesorio1 = 0;
-    int accsesorio2 = 0;
-    int accsesorio3 = 0;
+    public int armadura = 0;
+    public int arma_melee = 0;
+    public int arma_rango = 0;
+    public int botas = 0;
+    public int accsesorio1 = 0;
+    public int accsesorio2 = 0;
+    public int accsesorio3 = 0;
     //estetico
     public int[,] colores;
 
     //calculados
-    int vida = 0;
-    int meele = 0;
-    int Rango = 0;
-    float Movimiento = 0;
-    int esquivar = 0;
-    public List<Item> ineventario = new List<Item>();
-    public Item[] equipamiento = new Item[4];
+    public int vida = 10;
+    public int meele = 0;
+    public int Rango = 0;
+    public float Movimiento = 0;
+    public int esquivar = 0;
+    
 
-    public void SetInventstio(List<Item> ineventario_nuevo) 
-    {
-        ineventario = ineventario_nuevo;
-    }
-    public void SetEquipo(Item[] Equipo) 
-    {
-        equipamiento = Equipo;
-    }
-    public Data_Personaje(string V_nombre ,int V_lvl, int V_Exp, int V_Next_lvl, int V_vida,int V_VidaMaxima, int V_Fuerza, int V_Velocidad, int V_Constitucion,
+  
+    public Data_Personaje(string V_nombre, int V_lvl, int V_Exp, int V_Next_lvl, int V_vida, int V_VidaMaxima, int V_Fuerza, int V_Velocidad, int V_Constitucion,
                           int V_armadura, int V_arma_melee, int V_arma_rango, int V_botas, int V_accsesorio1, int V_accsesorio2, int V_accsesorio3,
                           int[,] V_Colores) {
         Nombre = V_nombre;
-        lvl= V_lvl;
+        lvl = V_lvl;
         Exp = V_Exp;
         Next_lvl = V_Next_lvl;
         vida = V_vida;
@@ -72,7 +64,7 @@ public class Data_Personaje
         colores = V_Colores;// new int[3,3] { { 1, 2 ,1}, { 3, 4,1 }, { 5, 6,1 }};
         Calcular();
     }
-    
+   
     public Data_Personaje(bool ModoPrueba)
     {
         if (ModoPrueba) {
@@ -87,12 +79,12 @@ public class Data_Personaje
             Velocidad = 10;
             Constitucion = 2;
 
-            perisia_vitalidad=1;//entre 0 a 10
-           
+            perisia_vitalidad = 1;//entre 0 a 10
+
             perisia_Fuerza = 1;//entre 0 a 10
-           
+
             perisia_Velocidad = 1;//entre 0 a 10
-            
+
             perisia_constitucion = 1;//entre 0 a 10
 
 
@@ -104,22 +96,22 @@ public class Data_Personaje
             accsesorio1 = 0;
             accsesorio2 = 0;
             accsesorio3 = 0;
-            colores = new int[3, 3] 
-            { 
-              {   0,   0, 255 }, 
-              {   0, 255,   0 }, 
-              { 255,   0,   0 } 
+            colores = new int[3, 3]
+            {
+              {   0,   0, 255 },
+              {   0, 255,   0 },
+              { 255,   0,   0 }
             };
             Calcular();
         }
-        else 
-        { 
+        else
+        {
             //cargar_datos();
         }
     }
     public Data_Personaje()
     {
-       
+
     }
     public void Lvl_UP() {
         Next_lvl = Next_lvl * (1 + (lvl / 10));
@@ -134,10 +126,10 @@ public class Data_Personaje
 
         perisia_constitucion = 1;//entre 0 a 10
 
-        var vitalidad = UnityEngine.Random.Range(1, perisia_vitalidad) *10;
-        var esfuerzo = UnityEngine.Random.Range(1, perisia_Fuerza) ;
-        var sprint = UnityEngine.Random.Range(1, perisia_Velocidad) ;
-        var corpulencia = UnityEngine.Random.Range(1, perisia_constitucion) ;
+        var vitalidad = UnityEngine.Random.Range(1, perisia_vitalidad) * 10;
+        var esfuerzo = UnityEngine.Random.Range(1, perisia_Fuerza);
+        var sprint = UnityEngine.Random.Range(1, perisia_Velocidad);
+        var corpulencia = UnityEngine.Random.Range(1, perisia_constitucion);
 
         vida_maxima = vida_maxima + vitalidad;
         Fuerza = Fuerza + esfuerzo;
@@ -146,7 +138,7 @@ public class Data_Personaje
     }
     public Data_Personaje(Data_Personaje personaje)
     {
-        Nombre =personaje.Nombre;
+        Nombre = personaje.Nombre;
         lvl = personaje.lvl;
         Exp = personaje.Exp;
         Next_lvl = personaje.Next_lvl;
@@ -165,34 +157,15 @@ public class Data_Personaje
         Calcular();
     }
 
-    public string Nombre1 { get => Nombre; set => Nombre = value; }
-    public int Lvl { get => lvl; set => lvl = value; }
-    public int Exp1 { get => Exp; set => Exp = value; }
-    public int Next_lvl1 { get => Next_lvl; set => Next_lvl = value; }
-    public int Vida { get => vida; set => vida = value; }
-    public int Fuerza1 { get => Fuerza; set => Fuerza = value; }
-    public int Velocidad1 { get => Velocidad; set => Velocidad = value; }
-    public int Constitucion1 { get => Constitucion; set => Constitucion = value; }
-    public int Armadura { get => armadura; set => armadura = value; }
-    public int Arma_melee { get => arma_melee; set => arma_melee = value; }
-    public int Arma_rango { get => arma_rango; set => arma_rango = value; }
-    public int Botas { get => botas; set => botas = value; }
-    public int Accsesorio1 { get => accsesorio1; set => accsesorio1 = value; }
-    public int Accsesorio2 { get => accsesorio2; set => accsesorio2 = value; }
-    public int Accsesorio3 { get => accsesorio3; set => accsesorio3 = value; }
-    public int Meele { get => meele; set => meele = value; }
-    public int Rango1 { get => Rango; set => Rango = value; }
-    public float Movimiento1 { get => Movimiento; set => Movimiento = value; }
-    public int Esquivar { get => esquivar; set => esquivar = value; }
+   
 
-    
-     public void Calcular() 
-     {
-         meele = Fuerza * Constitucion;
-         Movimiento = Velocidad / Constitucion;
-         esquivar= Velocidad / Constitucion;
-     }
-     
+    public void Calcular()
+    {
+        meele = Fuerza * Constitucion;
+        Movimiento = Velocidad / Constitucion;
+        esquivar = Velocidad / Constitucion;
+    }
+   
 
 
 }

@@ -23,6 +23,7 @@ public class sc_slot_mocochila : MonoBehaviour
         RemoveButton.enabled = true;
         RemoveButton.interactable = true;
         RemoveButton.image.enabled = true;
+        Debug.Log("Visualizando item :" + item.name);
 
     }
     public void Removeitem(Item newItem)
@@ -72,7 +73,7 @@ public class sc_slot_mocochila : MonoBehaviour
     {
         if (item != null) 
         {
-            item.Use();
+            equiparItem();
         }    
     }
 
@@ -124,6 +125,30 @@ public class sc_slot_mocochila : MonoBehaviour
         
 
         txt_status.text = status;
+    }
+    public void equiparItem() 
+    {
+        if (item.IsEquipable)
+        {
+            if (item.IsCasco)
+            {
+                sc_equipamiento.Instancia.AddItemByID(item, 0);
+                sc_Inventario.Instancia.RemoveItem(item);
+            }else if (item.IsMeleeW) 
+            {
+                sc_equipamiento.Instancia.AddItemByID(item, 1);
+                sc_Inventario.Instancia.RemoveItem(item);
+            }else if (item.IsPeto) 
+            {
+                sc_equipamiento.Instancia.AddItemByID(item, 2);
+                sc_Inventario.Instancia.RemoveItem(item);
+            }
+            else if (item.IsRangoW) 
+            {
+                sc_equipamiento.Instancia.AddItemByID(item, 3);
+                sc_Inventario.Instancia.RemoveItem(item);
+            }
+        }
     }
     public void removeTxtStatus()
     {

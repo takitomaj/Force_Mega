@@ -1,13 +1,11 @@
 fileFormatVersion: 2
-guid: 0e2309f3ee70d7a4aa243508ce3f87fc
+guid: 50c47f45dfa8e844cb5257789c858707
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Character movement_0
-    21300002: Character movement_1
-    21300004: Character movement_2
-    21300006: Character movement_3
-    21300008: Character movement_4
-    21300010: Character movement_5
+    21300000: melee_hit_0
+    21300002: melee_hit_1
+    21300004: melee_hit_2
+    21300006: melee_hit_3
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -40,18 +38,18 @@ TextureImporter:
     filterMode: -1
     aniso: -1
     mipBias: -100
-    wrapU: 0
-    wrapV: 0
-    wrapW: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
   spriteMode: 2
-  spriteExtrude: 0
-  spriteMeshType: 0
+  spriteExtrude: 1
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 18
+  spritePixelsToUnits: 21
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -112,121 +110,81 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Character movement_0
+      name: melee_hit_0
       rect:
         serializedVersion: 2
-        x: 17
-        y: 99
-        width: 28
-        height: 57
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 66e019a57fa6434479539c8220ab7857
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character movement_1
-      rect:
-        serializedVersion: 2
-        x: 112
-        y: 100
-        width: 25
-        height: 56
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c1ba3da45d59e52428fd573bf0d8f64e
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character movement_2
-      rect:
-        serializedVersion: 2
-        x: 210
-        y: 99
+        x: 21
+        y: 77
         width: 21
-        height: 57
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 41
+      alignment: 9
+      pivot: {x: 0.4984939, y: 0.0006912976}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2de551c5ff379d54f8a8eb13eb8e1321
+      spriteID: 87df2d9fc378bb142a29b75b712ec2c3
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character movement_3
+      name: melee_hit_1
       rect:
         serializedVersion: 2
-        x: 18
-        y: 7
-        width: 21
-        height: 53
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 85
+        y: 77
+        width: 23
+        height: 41
+      alignment: 9
+      pivot: {x: 0.4582264, y: 0.0049429173}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: abaf14cff9f91004d8e248041fe8f84d
+      spriteID: a74ad7841a2d48648a9d7684eb950fd9
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character movement_4
+      name: melee_hit_2
       rect:
         serializedVersion: 2
-        x: 114
-        y: 7
-        width: 21
-        height: 53
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 21
+        y: 13
+        width: 34
+        height: 41
+      alignment: 9
+      pivot: {x: 0.30589893, y: 0.00088926643}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b9dbe830e0f6cd4448cd9adbf969fe17
+      spriteID: 1f6ad8afb287e49418248d377b52a5cb
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character movement_5
+      name: melee_hit_3
       rect:
         serializedVersion: 2
-        x: 210
-        y: 7
-        width: 21
-        height: 53
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 85
+        y: 13
+        width: 36
+        height: 41
+      alignment: 9
+      pivot: {x: 0.28870264, y: -0.00000013956209}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 63c4bb82c284cf340aa785c2bfcee25f
+      spriteID: 6e6dc232bace6e045b810940abc0e4e3
       vertices: []
       indices: 
       edges: []
@@ -234,7 +192,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: b91a09baa195b7f4891b177fde687a17
+    spriteID: b935fb36f46c4d34ab31469d53ef2af6
     vertices: []
     indices: 
     edges: []
