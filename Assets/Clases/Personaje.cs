@@ -35,6 +35,8 @@ public class Personaje : MonoBehaviour
 	public Camera cam;
 	public Interacuar Focus;
 	public Canvas Inventario_Equipo;
+
+	public bool derecha = true;
 	
 	void Start()
 	{
@@ -163,13 +165,23 @@ public class Personaje : MonoBehaviour
 
 		if (h > 0.1f)
 		{
-			//transform.Rotate(new Vector3(1f, 1f, 1f));
-			transform.localScale = new Vector3(1f, 1f, 1f);
+
+			if (!derecha) { 
+			transform.Rotate(0f, 180f, 0f);
+				derecha = true;
+			}
+			
+			//transform.localScale = new Vector3(1f, 1f, 1f);
 		}
 		else if (h < -0.1f)
 		{
-			//transform.Rotate(new Vector3(1f, 1f, 1f));
-			transform.localScale = new Vector3(-1f, 1f, 1f);
+			if (derecha)
+			{
+				transform.Rotate(0f, 180f, 0f);
+				derecha = false;
+			}
+			
+			//transform.localScale = new Vector3(-1f, 1f, 1f);
 		}
 
 		if (salto)
