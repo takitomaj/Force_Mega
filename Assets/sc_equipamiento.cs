@@ -152,15 +152,33 @@ public class sc_equipamiento : MonoBehaviour
     public void UpdateStatus()
     {
         Personaje = jugador.GetComponent<Personaje>();
-        statusText.text = Personaje.stats.Nombre;
-        statusText.text = statusText.text + "\n Vida:  " + Personaje.stats.vida + " / " + Personaje.stats.vida_maxima ;
         int sumaFuerza = Personaje.stats.Fuerza + getModFuerza();
         int sumaConstitucion = Personaje.stats.Constitucion + getModConstitucion();
         int sumaVel = Personaje.stats.Velocidad + getModVelocidad();
+        int rango = 1;
+        int melee = Personaje.stats.Fuerza + Personaje.stats.Constitucion + getModFuerza();
+        int melee_total = 0;
+        int dano_arma_melee = 0;
+        if (sc_equipamiento.Instancia.items[3] != null) { rango = sc_equipamiento.Instancia.items[3].Dano; }
+        if (sc_equipamiento.Instancia.items[1] != null) 
+        {
+            dano_arma_melee = sc_equipamiento.Instancia.items[1].Dano;
+      
+        }
+        melee_total = melee + dano_arma_melee;
+        statusText.text = Personaje.stats.Nombre+" lvl. "+Personaje.stats.lvl+"";
+        statusText.text = statusText.text + "\n  Exp:  " + Personaje.stats.Exp + " / " + Personaje.stats.Next_lvl;
+        statusText.text = statusText.text + "\n  Vida:  " + Personaje.stats.vida + " / " + Personaje.stats.vida_maxima ;
 
-        statusText.text = statusText.text+  "\n frz.  :  "   + getModFuerza() +" + "+ Personaje.stats.Fuerza + "  = "+sumaFuerza+ "" ;
-        statusText.text = statusText.text + "\n con.  :  " + getModConstitucion() + " + " + Personaje.stats.Constitucion + "  = " + sumaConstitucion + "";
-        statusText.text = statusText.text + "\n vel.  :  " + getModVelocidad() + " + " + Personaje.stats.Velocidad + "  = " + sumaVel + "";
+        statusText.text = statusText.text+  "\n  frz: "   + getModFuerza() +" + "+ Personaje.stats.Fuerza + "  = "+sumaFuerza+ "" ;
+        statusText.text = statusText.text + "\n  def: " + getModConstitucion() + " + " + Personaje.stats.Constitucion + "  = " + sumaConstitucion + "";
+        statusText.text = statusText.text + "\n  vel: " + getModVelocidad() + " + " + Personaje.stats.Velocidad + "  = " + sumaVel + "";
+        statusText.text = statusText.text + "\n";
+        statusText.text = statusText.text + "\n  Rango: " + rango;
+        statusText.text = statusText.text + "\n  melee: " +dano_arma_melee+ " + "+ melee+ "  = " + melee_total;
+
+
+
 
     }
     // Update is called once per frame

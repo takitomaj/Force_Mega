@@ -7,7 +7,7 @@ public class Data_Personaje
 {
     public string Nombre = "";
     //niveles
-    public int lvl;
+    public int lvl=1;
     public int Exp = 0;
     public int Next_lvl = 0;
 
@@ -114,10 +114,11 @@ public class Data_Personaje
 
     }
     public void Lvl_UP() {
+
         Next_lvl = Next_lvl * (1 + (lvl / 10));
         lvl++;
         Exp = 0;
-
+        Debug.Log("Subio Nivel"+lvl );
         perisia_vitalidad = 1;//entre 0 a 10
 
         perisia_Fuerza = 1;//entre 0 a 10
