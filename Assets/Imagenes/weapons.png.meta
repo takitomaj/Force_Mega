@@ -1,11 +1,17 @@
 fileFormatVersion: 2
-guid: 962e30ae5d08d124caddde6e9d0a2ca2
+guid: ff17398176915b0469000bf64c4bf519
 TextureImporter:
   fileIDToRecycleName:
-    21300000: idel_0
-    21300002: idel_1
-    21300004: idel_2
-    21300006: idel_3
+    21300000: weapons_0
+    21300002: weapons_1
+    21300004: weapons_2
+    21300006: weapons_3
+    21300008: weapons_4
+    21300010: weapons_5
+    21300012: weapons_6
+    21300014: weapons_7
+    21300016: weapons_8
+    21300018: weapons_9
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -110,81 +116,201 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: idel_0
+      name: weapons_0
       rect:
         serializedVersion: 2
-        x: 21
-        y: 77
-        width: 21
-        height: 41
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 28
+        y: 284
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b988a3ee62f37de48a9f1665c4b714f0
+      spriteID: 3e27e1cc13d5d714988c01544a361625
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idel_1
+      name: weapons_1
       rect:
         serializedVersion: 2
-        x: 85
-        y: 77
-        width: 21
-        height: 42
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 92
+        y: 284
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: be4d9c609fc55f0488956c44607a4b0b
+      spriteID: d4ea6f1fb007e25488506c5edbadc7e9
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idel_2
+      name: weapons_2
       rect:
         serializedVersion: 2
-        x: 21
-        y: 13
-        width: 21
-        height: 41
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 26
+        y: 221
+        width: 15
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5aaf1ba7849992f449b95f71df7f3048
+      spriteID: 8b97d9fbd7506c04eacae6c981281cc4
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idel_3
+      name: weapons_3
       rect:
         serializedVersion: 2
-        x: 85
-        y: 13
-        width: 21
-        height: 41
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 90
+        y: 221
+        width: 15
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 378e8cb6bc7b3544aa9c781b6fcc9013
+      spriteID: 84840cf01e234af428a258a504f53223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapons_4
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 155
+        width: 19
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1f54866714598843a108a414fbfcf6d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapons_5
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 155
+        width: 19
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8355465d53da0d24fa2a0dab12a46e64
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapons_6
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 92
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bd8782adcdcfad4b9cf3c3468f3bdbd
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapons_7
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 92
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6ce8afdb24f7814c88f2c75d804d3b3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapons_8
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 28
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbe0fd234fa59e946bcde6018401a2b0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: weapons_9
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 28
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b4605dc686dc86419623781ec73ea0a
       vertices: []
       indices: 
       edges: []
@@ -192,7 +318,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: e4130fe2702acde45b4609447b794269
+    spriteID: c5fd8bd81544f0a4291b912d9e9b077c
     vertices: []
     indices: 
     edges: []

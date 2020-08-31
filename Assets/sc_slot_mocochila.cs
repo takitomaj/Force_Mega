@@ -15,6 +15,7 @@ public class sc_slot_mocochila : MonoBehaviour
         item = newItem;
 
         icon.sprite = item.icono;
+        icon.preserveAspect= true;
         icon.color = new Color(item.color[0], item.color[1], item.color[2], item.color[3]);
         icon.enabled = true;
         setTxtStatus();

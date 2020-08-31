@@ -10,23 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 916537bd5b622914b88f22edf99c6c74, type: 3}
-  m_Name: peto
+  m_Name: Espada_item
   m_EditorClassIdentifier: 
-  nombre: peto_prueba
+  nombre: espada
   ID: 1
   IDtipo: 0
-  Tipo: item
-  icono: {fileID: 21300006, guid: b4fe6f2839472254e8d8f2c1856cf405, type: 3}
+  Tipo: espada
+  icono: {fileID: 21300010, guid: b4fe6f2839472254e8d8f2c1856cf405, type: 3}
   IsDefault: 0
-  color: 0000000000000000ff000000ff000000
+  color: 00000000ff00000000000000ff000000
   IsConsumible: 0
   restauraVida: 0
   IsEquipable: 1
   IsCasco: 0
-  IsPeto: 1
-  IsMeleeW: 0
+  IsPeto: 0
+  IsMeleeW: 1
   IsRangoW: 0
-  ModFuerza: 0
-  ModConstitucion: 30
-  ModVelocidad: -4
-  Dano: 0
+  ModFuerza: 2
+  ModConstitucion: 0
+  ModVelocidad: 0
+  Dano: 40

@@ -184,7 +184,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0.000048816, y: -0.000024319}
-  m_SizeDelta: {x: 158.4, y: 152.1}
+  m_SizeDelta: {x: 158.4, y: 158.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5289425315563302510
 CanvasRenderer:
@@ -208,7 +208,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -413,7 +413,7 @@ GameObject:
   - component: {fileID: 5289425316433728981}
   - component: {fileID: 5289425316433728980}
   m_Layer: 0
-  m_Name: Image
+  m_Name: Stats_panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
