@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
-  m_Name: DOSIS-MEDIUM
+  m_Name: 8bity
   m_EditorClassIdentifier: 
   hashCode: -1389838286
   material: {fileID: 21725345230478544}
@@ -401,7 +401,7 @@ MonoBehaviour:
     xAdvance: 54.8125
     scale: 1
   - id: 72
-    x: 857
+    x: 856.57
     y: 479
     width: 43.90625
     height: 73.09375
@@ -2077,7 +2077,7 @@ Material:
     - _FaceColor: {r: 1, g: 1, b: 1, a: 1}
     - _GlowColor: {r: 1, g: 1, b: 1, a: 1}
     - _MaskCoord: {r: 0, g: 0, b: 32767, a: 32767}
-    - _OutlineColor: {r: 1, g: 1, b: 1, a: 0.2784314}
+    - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
     - _ReflectFaceColor: {r: 0, g: 0, b: 0, a: 1}
     - _ReflectOutlineColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}

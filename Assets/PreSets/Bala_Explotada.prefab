@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3107993496829752911}
   - component: {fileID: 8579774733718483028}
   - component: {fileID: 995585721288947851}
+  - component: {fileID: 3431357067257276841}
   m_Layer: 0
   m_Name: Bala_Explotada
   m_TagString: Untagged
@@ -99,3 +100,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3431357067257276841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4907988785606957677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 287d1db04305c6348a03084fa3df4b86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeTime: 0.1

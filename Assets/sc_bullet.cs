@@ -9,6 +9,7 @@ public class sc_bullet : MonoBehaviour
     public Rigidbody2D rb;
     public SpriteRenderer sprite;
     public GameObject explocionffect;
+    public float lifeTime= 3.0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,18 +31,21 @@ public class sc_bullet : MonoBehaviour
             dano = 1; 
         }
         rb.velocity = transform.right * speed;
+        Destroy(gameObject, lifeTime);
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
 
         Instantiate(explocionffect, transform.position, Quaternion.identity);
+       
         Enemy enemy = collision.GetComponent<Enemy>();
 
         if(enemy != null) 
         {
             enemy.takeDamage(dano);
         }
+        
         Destroy(gameObject);
     }
 

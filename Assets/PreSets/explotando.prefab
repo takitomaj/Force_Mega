@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7037848620302573449}
   - component: {fileID: 7037848620302573494}
   - component: {fileID: 9092278494070621746}
+  - component: {fileID: 5531148057821268355}
   m_Layer: 0
   m_Name: explotando
   m_TagString: Untagged
@@ -115,3 +116,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &5531148057821268355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7037848620302573495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 287d1db04305c6348a03084fa3df4b86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeTime: 3

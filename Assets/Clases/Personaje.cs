@@ -37,16 +37,17 @@ public class Personaje : MonoBehaviour
 	public Camera cam;
 	public Interacuar Focus;
 	public Canvas Inventario_Equipo;
-
+	public Canvas canvas_Pausa;
 
 	public bool derecha = true;
 	
 	void Start()
 	{
 		Inventario_Equipo.enabled = false;
+		canvas_Pausa.enabled = false;
 		cam = Camera.main;
 		stats = new Data_Personaje(true);
-		
+		loadStatus();
 		anim = GetComponent<Animator>();
 		rb2d = GetComponent<Rigidbody2D>();
 		SetVida();
@@ -78,6 +79,19 @@ public class Personaje : MonoBehaviour
 		{
 			Inventario_Equipo.enabled = true;
 			 
+		}
+	}
+	public void pausa()
+	{
+		if (canvas_Pausa.isActiveAndEnabled)
+		{
+			canvas_Pausa.enabled = false;
+
+		}
+		else
+		{
+			canvas_Pausa.enabled = true;
+
 		}
 	}
 	public void melee_atack()
@@ -205,12 +219,12 @@ public class Personaje : MonoBehaviour
 	}
 	public void OnCollisionStay2D(Collision2D collision)
 	{
-		//if (collision.gameObject.tag=="suelo") {
+		if (collision.gameObject.tag=="suelo") {
 		tirra = true;
-		//}
+		}
 		if (collision.gameObject.tag == "Curacion +1")
 		{
-			stats.vida += 1;
+			Recibir_vida(1);
 		}
 	}
 	public void OnCollisionExit2D(Collision2D collision)
@@ -276,7 +290,9 @@ public class Personaje : MonoBehaviour
 	}
 	public void loadStatus()
 	{
-		stats = serializador.LoadPersonaje();
+		if (serializador.LoadPersonaje()!=null) { 
+		stats = serializador.LoadPersonaje(); 
+		}
 		//XML_serialisador xml = new XML_serialisador();
 		
 		//sc_Inventario.Instancia.AddItem(xml.leerXML());

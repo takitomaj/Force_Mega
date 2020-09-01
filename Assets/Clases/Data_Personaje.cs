@@ -114,8 +114,9 @@ public class Data_Personaje
 
     }
     public void Lvl_UP() {
-
+        Debug.Log(Next_lvl +"* (1 + ("+lvl+" / 10))");
         Next_lvl = Next_lvl * (1 + (lvl / 10));
+        Debug.Log("Subio Nivel" + Next_lvl);
         lvl++;
         Exp = 0;
         Debug.Log("Subio Nivel"+lvl );

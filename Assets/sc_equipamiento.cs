@@ -159,11 +159,13 @@ public class sc_equipamiento : MonoBehaviour
         int melee = Personaje.stats.Fuerza + Personaje.stats.Constitucion + getModFuerza();
         int melee_total = 0;
         int dano_arma_melee = 0;
-        if (sc_equipamiento.Instancia.items[3] != null) { rango = sc_equipamiento.Instancia.items[3].Dano; }
+        if (sc_equipamiento.Instancia.items[3] != null) 
+        {
+            rango = sc_equipamiento.Instancia.items[3].Dano; 
+        }
         if (sc_equipamiento.Instancia.items[1] != null) 
         {
             dano_arma_melee = sc_equipamiento.Instancia.items[1].Dano;
-      
         }
         melee_total = melee + dano_arma_melee;
         statusText.text = Personaje.stats.Nombre+" lvl. "+Personaje.stats.lvl+"";
