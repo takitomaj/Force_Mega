@@ -44,7 +44,7 @@ public class Personaje : MonoBehaviour
 	void Start()
 	{
 		Inventario_Equipo.enabled = false;
-		canvas_Pausa.enabled = false;
+		
 		cam = Camera.main;
 		stats = new Data_Personaje(true);
 		loadStatus();
@@ -54,7 +54,10 @@ public class Personaje : MonoBehaviour
 
 
 		maxSpeed = 3.0f + stats.Movimiento;
-
+		if (canvas_Pausa.isActiveAndEnabled)
+		{
+			canvas_Pausa.enabled = false;
+		}
 	}
 	public void Espadazo()
 	{
@@ -282,24 +285,20 @@ public class Personaje : MonoBehaviour
 
 	public void saveStatus()
 	{
-		
+		stats.getEquipo_to_Serialisable();
+		stats.getInventari_to_serialisable();
 		serializador.SavePersonaje(stats);
-		//XML_serialisador xml = new XML_serialisador();
-		//xml.EscrivirXML(sc_Inventario.Instancia.items[0]);
-		//serializador.saveInventario();
+	
 	}
+	
 	public void loadStatus()
 	{
 		if (serializador.LoadPersonaje()!=null) { 
-		stats = serializador.LoadPersonaje(); 
+			stats = serializador.LoadPersonaje();
+			stats.setEquipo();
+			stats.setInventario();
 		}
-		//XML_serialisador xml = new XML_serialisador();
 		
-		//sc_Inventario.Instancia.AddItem(xml.leerXML());
-		//Barra_vida.SetMax_helth(stats.vida_maxima);
-		//Barra_vida.SetHelt(stats.vida);
-		//maxSpeed = 3.0f + stats.Movimiento;
-		//serializador.loadInventario();
 	}
 	
 

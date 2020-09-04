@@ -38,6 +38,8 @@ public class Data_Personaje
     public int Rango = 0;
     public float Movimiento = 0;
     public int esquivar = 0;
+    public sc_Serializable_Item[] equipo = new sc_Serializable_Item[4];
+    public List<sc_Serializable_Item> inventario = new List<sc_Serializable_Item>();
     
 
   
@@ -113,6 +115,63 @@ public class Data_Personaje
     {
 
     }
+
+    public void getEquipo_to_Serialisable() 
+    {
+        if (sc_equipamiento.Instancia.items[0] != null) {
+
+            sc_Serializable_Item casco = new sc_Serializable_Item(sc_equipamiento.Instancia.items[0]);
+            equipo[0] = casco;
+        }
+        if (sc_equipamiento.Instancia.items[1] != null)
+        {
+
+            sc_Serializable_Item espada = new sc_Serializable_Item(sc_equipamiento.Instancia.items[1]);
+            equipo[1] = espada;
+        }
+        if (sc_equipamiento.Instancia.items[2] != null)
+        {
+
+            sc_Serializable_Item peto = new sc_Serializable_Item(sc_equipamiento.Instancia.items[2]);
+            equipo[2] = peto;
+        }
+        if (sc_equipamiento.Instancia.items[3] != null)
+        {
+
+            sc_Serializable_Item arma = new sc_Serializable_Item(sc_equipamiento.Instancia.items[3]);
+            equipo[3] = arma;
+        }
+    }
+
+    public void getInventari_to_serialisable() 
+    {
+        inventario =  new List<sc_Serializable_Item>();
+        foreach (Item item in sc_Inventario.Instancia.items) 
+        {
+            sc_Serializable_Item itemSerializable = new sc_Serializable_Item(item);
+            
+            inventario.Add(itemSerializable);
+        }
+    }
+    public void setEquipo() 
+    {
+        for (int i=0;i<=3; i++) 
+        {
+            if (equipo[i] != null) 
+            {
+
+                sc_equipamiento.Instancia.items[i] = equipo[i].GetItem();
+            }
+        }
+    }
+    public void setInventario()
+    {
+        foreach (sc_Serializable_Item s_item in inventario)
+        {
+            sc_Inventario.Instancia.AddItem(s_item.GetItem());
+        }
+    }
+
     public void Lvl_UP() {
         Debug.Log(Next_lvl +"* (1 + ("+lvl+" / 10))");
         Next_lvl = Next_lvl * (1 + (lvl / 10));

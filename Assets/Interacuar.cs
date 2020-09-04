@@ -38,7 +38,7 @@ public class Interacuar : MonoBehaviour
     }
     public virtual void Interactuar() { 
         //este metodo se reescribira dependiendo de con que interactue
-        Debug.Log("Interactuar con"+ transform.name); 
+       // Debug.Log("Interactuar con"+ transform.name); 
     }
 
     

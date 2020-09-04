@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class sc_menu : MonoBehaviour
 {
+    public Animator transicion;
+    public float TiempoTrancision = 1f;
     public void PlayGame()
     {
         SceneManager.LoadScene(1);
@@ -15,23 +17,38 @@ public class sc_menu : MonoBehaviour
     }
     public void GoOptions()
     {
-        SceneManager.LoadScene(4);
+        StartCoroutine(loadLevel(4));
+        //SceneManager.LoadScene(4);
     }
     public void GoHome()
     {
-        SceneManager.LoadScene(2);
+        StartCoroutine(loadLevel(2));
+        //SceneManager.LoadScene(2);
     }
     public void MainMenu()
     {
-        SceneManager.LoadScene(0);
+        StartCoroutine(loadLevel(0));
+        //SceneManager.LoadScene(0);
     }
     public void menu()
     {
-        SceneManager.LoadScene(0);
+        StartCoroutine(loadLevel(0));
+        //SceneManager.LoadScene(0);
     }
     public void closeGame()
     {
         Application.Quit();
+    }
+
+    IEnumerator loadLevel(int IndexEscena)
+    {
+        transicion.SetTrigger("Start");
+
+        yield return new WaitForSeconds(TiempoTrancision);
+
+        SceneManager.LoadScene(IndexEscena);
+
+
     }
 }
     
