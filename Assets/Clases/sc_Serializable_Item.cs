@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
-using UnityEditor;
+
 
 [System.Serializable]
 public class sc_Serializable_Item 
@@ -39,8 +39,11 @@ public class sc_Serializable_Item
         IDtipo = item.IDtipo;
         Tipo = item.Tipo;
 
-        icon_name = item.icono.name; 
-        icon_url = AssetDatabase.GetAssetPath(item.icono); ;
+        icon_name = item.icono.name;
+        
+
+        icon_url = Get_nombreSprite(item.icono.name);
+        
         IsDefault = item.IsDefault;
         color = item.color;
         // consumibles
@@ -60,7 +63,26 @@ public class sc_Serializable_Item
         Dano = item.Dano;
 
     }
+    public string Get_nombreSprite(string nombreSprite) 
+    {
+        string[] nombre_list = nombreSprite.Split('_');
+        string nombre_sprite_multipe = "";
+        for (int i = 0; i <= nombre_list.Length - 2; i++)
+        {
+            if (i == 0)
+            {
+                nombre_sprite_multipe = nombre_list[i];
+            }
+            else
+            {
+                nombre_sprite_multipe = nombre_sprite_multipe + "_" + nombre_list[i];
+            }
 
+
+        }
+        return nombre_sprite_multipe;
+
+    }
     public Item GetItem() 
     {
         Item salida= new Item();
@@ -69,10 +91,12 @@ public class sc_Serializable_Item
         salida.ID = ID;
         salida.IDtipo = IDtipo;
         salida.Tipo = Tipo;
-
+        
         
         //Icono
-        Sprite[] sprites = AssetDatabase.LoadAllAssetsAtPath(icon_url).OfType<Sprite>().ToArray();
+        Sprite[] sprites = Resources.LoadAll<Sprite>(icon_url);
+        
+       
         foreach (Sprite asprite in sprites)
         {
             if (asprite.name == icon_name)
@@ -80,6 +104,7 @@ public class sc_Serializable_Item
                 salida.icono = asprite;
             }
         }
+        
         salida.IsDefault = IsDefault;
         salida.color = color;
         // consumibles

@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName ="new Item",menuName ="Inventary/Item")]
-[System.Serializable]
 public class Item : ScriptableObject
 {
     public string nombre = "_";

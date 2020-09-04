@@ -1249,6 +1249,11 @@ PrefabInstance:
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[0].y
       value: 0.20085144
       objectReference: {fileID: 0}
+    - target: {fileID: 4748696691672534584, guid: 33005627080f79f4eac66ee09af7eaed,
+        type: 3}
+      propertyPath: objetoselect
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33005627080f79f4eac66ee09af7eaed, type: 3}
 --- !u!1001 &392737529
@@ -3369,6 +3374,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4805315873033391361, guid: 9856cdbac34f5174ebb13ef3b9aefc5d,
+        type: 3}
+      propertyPath: objetoselect
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9856cdbac34f5174ebb13ef3b9aefc5d, type: 3}
 --- !u!1 &1247701497
@@ -4247,6 +4257,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9068819749643705103, guid: f87826b15f5c34047bb622be0d27df22,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f87826b15f5c34047bb622be0d27df22, type: 3}
 --- !u!95 &1520939539 stripped
@@ -4421,6 +4436,7 @@ MonoBehaviour:
   player: {fileID: 0}
   InteraccionTransform: {fileID: 0}
   item: {fileID: 11400000, guid: 331d45b9f7195a14ba45027c8e901c49, type: 2}
+  objetoselect: {fileID: 0}
 --- !u!50 &1665798827
 Rigidbody2D:
   serializedVersion: 4
@@ -6688,6 +6704,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1919210021206168266, guid: c2cb51c3671a22f428992ba7a6523779,
+        type: 3}
+      propertyPath: joystickM
+      value: 
+      objectReference: {fileID: 1211756094}
+    - target: {fileID: 1919210021206168266, guid: c2cb51c3671a22f428992ba7a6523779,
+        type: 3}
+      propertyPath: Inventario_Equipo
+      value: 
+      objectReference: {fileID: 837066255}
+    - target: {fileID: 1919210021206168266, guid: c2cb51c3671a22f428992ba7a6523779,
+        type: 3}
+      propertyPath: canvas_Pausa
+      value: 
+      objectReference: {fileID: 180219695}
     - target: {fileID: 1919210021180899441, guid: c2cb51c3671a22f428992ba7a6523779,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6743,21 +6774,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1919210021206168266, guid: c2cb51c3671a22f428992ba7a6523779,
+    - target: {fileID: 1919210022430836726, guid: c2cb51c3671a22f428992ba7a6523779,
         type: 3}
-      propertyPath: joystickM
-      value: 
-      objectReference: {fileID: 1211756094}
-    - target: {fileID: 1919210021206168266, guid: c2cb51c3671a22f428992ba7a6523779,
-        type: 3}
-      propertyPath: Inventario_Equipo
-      value: 
-      objectReference: {fileID: 837066255}
-    - target: {fileID: 1919210021206168266, guid: c2cb51c3671a22f428992ba7a6523779,
-        type: 3}
-      propertyPath: canvas_Pausa
-      value: 
-      objectReference: {fileID: 180219695}
+      propertyPath: esperaEspada
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 1919210021801502775, guid: c2cb51c3671a22f428992ba7a6523779,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -6767,11 +6788,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1919210022430836726, guid: c2cb51c3671a22f428992ba7a6523779,
-        type: 3}
-      propertyPath: esperaEspada
-      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 1919210022107860564, guid: c2cb51c3671a22f428992ba7a6523779,
         type: 3}
@@ -7177,6 +7193,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4805315873033391361, guid: 9856cdbac34f5174ebb13ef3b9aefc5d,
+        type: 3}
+      propertyPath: objetoselect
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9856cdbac34f5174ebb13ef3b9aefc5d, type: 3}

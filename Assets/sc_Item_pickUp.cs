@@ -1,6 +1,6 @@
 ﻿using System;
 using UnityEngine;
-
+    
 
 public class sc_Item_pickUp : Interacuar
 {
