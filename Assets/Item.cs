@@ -14,7 +14,7 @@ public class Item : ScriptableObject
     [SerializeField]
     public Sprite icono = null;
     public Boolean IsDefault=false;
-    public int[] color = { 255, 255, 255, 0 };
+    public int[] color = { 255, 255, 255, 255 };
     // consumibles
     public Boolean IsConsumible = false;
     public int restauraVida = 0;

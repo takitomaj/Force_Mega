@@ -4,7 +4,7 @@ using System.IO;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Experimental.UIElements;
+
 using UnityEngine.UI;
 //using NUnit.Framework.Internal;
 //using UnityEngine.Networking;
@@ -22,6 +22,7 @@ public class Personaje : MonoBehaviour
 	public UnityEngine.UI.Image casco;
 	public UnityEngine.UI.Image peto;
 	public UnityEngine.UI.Image Botas;
+	public Text Nombre;
 
 	public Data_Personaje stats;
 	public HeltBar Barra_vida;
@@ -46,8 +47,9 @@ public class Personaje : MonoBehaviour
 		Inventario_Equipo.enabled = false;
 		
 		cam = Camera.main;
-		stats = new Data_Personaje(true);
+		//stats = new Data_Personaje(true);
 		loadStatus();
+		Nombre.text = stats.Nombre;
 		anim = GetComponent<Animator>();
 		rb2d = GetComponent<Rigidbody2D>();
 		SetVida();
@@ -102,12 +104,15 @@ public class Personaje : MonoBehaviour
 		Espadazo();
 	}
 	
-
-
+	public int getLvl() { return stats.lvl; }
+	public void updateName() 
+	{
+		Nombre.text = stats.Nombre;
+	}
 	void Update()
 	{
-		
-		
+
+		//Nombre.text = stats.Nombre;
 		//seting de touch y mouse
 		if (Input.GetMouseButtonDown(0))
 		{
@@ -222,12 +227,25 @@ public class Personaje : MonoBehaviour
 	}
 	public void OnCollisionStay2D(Collision2D collision)
 	{
-		if (collision.gameObject.tag=="suelo") {
-		tirra = true;
+		if (collision.gameObject.tag=="suelo") 
+		{
+			tirra = true;
 		}
 		if (collision.gameObject.tag == "Curacion +1")
 		{
+			tirra = true;
 			Recibir_vida(1);
+		}
+		if(collision.gameObject.tag == "Enemy") 
+		{
+			Enemy enemy = collision.gameObject.GetComponent<Enemy>();
+			//Debug.Log("colisiona Enemigo");
+			Rigidbody2D rb2d=gameObject.GetComponent<Rigidbody2D>();
+			rb2d.AddForce(Vector2.up *8,ForceMode2D.Impulse);
+			rb2d.AddForce(Vector2.left * 1000, ForceMode2D.Impulse);
+			Debug.Log("dano"+ enemy.dano);
+			Recibir_Dano(enemy.dano);
+
 		}
 	}
 	public void OnCollisionExit2D(Collision2D collision)
@@ -238,7 +256,8 @@ public class Personaje : MonoBehaviour
 
 	public void Recibir_Dano(int dano)
 	{
-		stats.vida = stats.vida - dano;
+		int danoNeto = -dano + stats.Constitucion + sc_equipamiento.Instancia.getModConstitucion();
+		stats.vida = stats.vida - danoNeto;
 		Barra_vida.SetHelt(stats.vida);
 	}
 	public void SetVida() 
@@ -287,6 +306,7 @@ public class Personaje : MonoBehaviour
 	{
 		stats.getEquipo_to_Serialisable();
 		stats.getInventari_to_serialisable();
+		stats.dinero = sc_Inventario.Instancia.Dineros;
 		serializador.SavePersonaje(stats);
 	
 	}
@@ -297,6 +317,11 @@ public class Personaje : MonoBehaviour
 			stats = serializador.LoadPersonaje();
 			stats.setEquipo();
 			stats.setInventario();
+			sc_Inventario.Instancia.Dineros = stats.dinero;
+		}
+		else 
+		{
+			stats = new Data_Personaje(false);
 		}
 		
 	}

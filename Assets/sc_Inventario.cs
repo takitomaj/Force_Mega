@@ -6,6 +6,7 @@ public class sc_Inventario : MonoBehaviour
 {
     #region Singelton
     public static sc_Inventario Instancia;
+    public int Dineros=0;
     void Awake()
     {
         if (Instancia != null) 

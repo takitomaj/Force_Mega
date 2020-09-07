@@ -11,6 +11,13 @@ public class sc_equipamiento : MonoBehaviour
     public Transform jugador;
     Personaje Personaje;
     public Text statusText;
+    public delegate void OnItemChaged();
+    public OnItemChaged onItemChangedCallBack;
+
+    public Item[] items = new Item[4];  //0: casco
+                                        //1: Melee
+                                        //2: Peto
+                                        //3: arma
     void Awake()
     {
         if (Instancia != null)
@@ -22,13 +29,7 @@ public class sc_equipamiento : MonoBehaviour
     }
     #endregion Singelton
 
-    public delegate void OnItemChaged();
-    public OnItemChaged onItemChangedCallBack;
-
-    public Item[] items = new Item[4];  //0: casco
-                                        //1: Melee
-                                        //2: Peto
-                                        //3: arma
+    
 
     public void AddCasco(Item Newitem)
     {
@@ -112,7 +113,11 @@ public class sc_equipamiento : MonoBehaviour
     }
     void Start()
     {
-        
+        //items[0] = null;
+        //items[1] = null;
+        //items[2] = null;
+        //items[3] = null;
+
     }
     public int getModConstitucion()
     {
@@ -184,6 +189,13 @@ public class sc_equipamiento : MonoBehaviour
 
     }
     // Update is called once per frame
+    public void Consumir(Item item) 
+    {
+        if (item.IsConsumible) 
+        {
+            Personaje.Recibir_vida(item.restauraVida);
+        }
+    }
     void Update()
     {
         UpdateStatus();

@@ -18,7 +18,7 @@ MonoBehaviour:
   Tipo: item
   icono: {fileID: 21300002, guid: b4fe6f2839472254e8d8f2c1856cf405, type: 3}
   IsDefault: 0
-  color: ff00000000000000ff000000ff000000
+  color: 64000000000000007b00000064000000
   IsConsumible: 0
   restauraVida: 0
   IsEquipable: 1

@@ -547,11 +547,6 @@ PrefabInstance:
       propertyPath: m_RenderMode
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8070476966352098381, guid: b3964fa448343fd489e7db54653a4c73,
-        type: 3}
-      propertyPath: m_UiScaleMode
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8070476967009737438, guid: b3964fa448343fd489e7db54653a4c73,
         type: 3}
       propertyPath: m_AnchorMin.x
@@ -581,6 +576,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8070476965961657695, guid: b3964fa448343fd489e7db54653a4c73,
+        type: 3}
+      propertyPath: m_Name
+      value: Panel_opciones
+      objectReference: {fileID: 0}
+    - target: {fileID: 8070476966299052588, guid: b3964fa448343fd489e7db54653a4c73,
+        type: 3}
+      propertyPath: m_Name
+      value: Panel_fondo
+      objectReference: {fileID: 0}
+    - target: {fileID: 8070476966352098381, guid: b3964fa448343fd489e7db54653a4c73,
+        type: 3}
+      propertyPath: m_UiScaleMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8070476965650124166, guid: b3964fa448343fd489e7db54653a4c73,
+        type: 3}
+      propertyPath: m_Name
+      value: Text_titulo
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3964fa448343fd489e7db54653a4c73, type: 3}

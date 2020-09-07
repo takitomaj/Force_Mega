@@ -10,17 +10,17 @@ public class Data_Personaje
     public int lvl=1;
     public int Exp = 0;
     public int Next_lvl = 0;
-
+    //Dinero
+    public int dinero = 0;
     //Status
-
     public int vida_maxima = 100;
-    public int perisia_vitalidad;//entre 0 a 10
+    public int perisia_vitalidad=1;//entre 0 a 10
     public int Fuerza = 0;
-    public int perisia_Fuerza;//entre 0 a 10
+    public int perisia_Fuerza = 1;//entre 0 a 10
     public int Velocidad = 0;
-    public int perisia_Velocidad;//entre 0 a 10
+    public int perisia_Velocidad=1;//entre 0 a 10
     public int Constitucion = 0;
-    public int perisia_constitucion;//entre 0 a 10
+    public int perisia_constitucion=1;//entre 0 a 10
     //Equipo
     public int armadura = 0;
     public int arma_melee = 0;
@@ -73,7 +73,7 @@ public class Data_Personaje
             Nombre = "test";
             lvl = 1;
             Exp = 10;
-            Next_lvl = 100;
+            Next_lvl = 30;
 
             vida_maxima = 150;
             vida = 100;
@@ -81,13 +81,13 @@ public class Data_Personaje
             Velocidad = 10;
             Constitucion = 2;
 
-            perisia_vitalidad = 1;//entre 0 a 10
+            perisia_vitalidad = 5;//entre 0 a 10
 
-            perisia_Fuerza = 1;//entre 0 a 10
+            perisia_Fuerza = 5;//entre 0 a 10
 
-            perisia_Velocidad = 1;//entre 0 a 10
+            perisia_Velocidad = 7;//entre 0 a 10
 
-            perisia_constitucion = 1;//entre 0 a 10
+            perisia_constitucion = 10;//entre 0 a 10
 
 
 
@@ -108,14 +108,43 @@ public class Data_Personaje
         }
         else
         {
-            //cargar_datos();
+            //niveles
+            lvl = 1;
+            Exp = 0;
+            Next_lvl = 30;
+            //perisias
+            perisia_vitalidad =Random.Range(1, 11);
+            perisia_constitucion = Random.Range(1, 11);
+            perisia_Fuerza = Random.Range(1, 11);
+            perisia_Velocidad = Random.Range(1, 11);
+            //stats
+            vida_maxima = Random.Range(100, 200);
+            vida = vida_maxima;
+            Fuerza = perisia_Fuerza;
+            Velocidad = perisia_Velocidad;
+            Constitucion = perisia_constitucion;
+            colores = new int[3, 3]
+            {
+              {Random.Range(0, 255),Random.Range(0, 255),Random.Range(0, 255)},
+              {Random.Range(0, 255),Random.Range(0, 255),Random.Range(0, 255)},
+              {Random.Range(0, 255),Random.Range(0, 255),Random.Range(0, 255)}
+            };
+
+
         }
     }
     public Data_Personaje()
     {
 
     }
-
+    public void SetDineroos(int dineros) 
+    {
+        dinero = dineros;
+    }
+    public void ganaDinero(int dineros) 
+    {
+        dinero += dineros;
+    }
     public void getEquipo_to_Serialisable() 
     {
         if (sc_equipamiento.Instancia.items[0] != null) {
@@ -123,24 +152,28 @@ public class Data_Personaje
             sc_Serializable_Item casco = new sc_Serializable_Item(sc_equipamiento.Instancia.items[0]);
             equipo[0] = casco;
         }
+        else { equipo[0] = null; }
         if (sc_equipamiento.Instancia.items[1] != null)
         {
 
             sc_Serializable_Item espada = new sc_Serializable_Item(sc_equipamiento.Instancia.items[1]);
             equipo[1] = espada;
         }
+        else { equipo[1] = null; }
         if (sc_equipamiento.Instancia.items[2] != null)
         {
 
             sc_Serializable_Item peto = new sc_Serializable_Item(sc_equipamiento.Instancia.items[2]);
             equipo[2] = peto;
         }
+        else { equipo[2] = null; }
         if (sc_equipamiento.Instancia.items[3] != null)
         {
 
             sc_Serializable_Item arma = new sc_Serializable_Item(sc_equipamiento.Instancia.items[3]);
             equipo[3] = arma;
         }
+        else { equipo[3] = null; }
     }
 
     public void getInventari_to_serialisable() 
@@ -173,21 +206,15 @@ public class Data_Personaje
     }
 
     public void Lvl_UP() {
-        Debug.Log(Next_lvl +"* (1 + ("+lvl+" / 10))");
-        Next_lvl = Next_lvl * (1 + (lvl / 10));
-        Debug.Log("Subio Nivel" + Next_lvl);
+       
+        Next_lvl = (lvl+1) *30;
+        
         lvl++;
         Exp = 0;
-        Debug.Log("Subio Nivel"+lvl );
-        perisia_vitalidad = 1;//entre 0 a 10
+        
+        
 
-        perisia_Fuerza = 1;//entre 0 a 10
-
-        perisia_Velocidad = 1;//entre 0 a 10
-
-        perisia_constitucion = 1;//entre 0 a 10
-
-        var vitalidad = UnityEngine.Random.Range(1, perisia_vitalidad) * 10;
+        var vitalidad = UnityEngine.Random.Range(1, perisia_vitalidad) * 20;
         var esfuerzo = UnityEngine.Random.Range(1, perisia_Fuerza);
         var sprint = UnityEngine.Random.Range(1, perisia_Velocidad);
         var corpulencia = UnityEngine.Random.Range(1, perisia_constitucion);

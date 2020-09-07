@@ -10,9 +10,11 @@ public static class serializador
 
     public static void SavePersonaje(Data_Personaje personaje)
     {
-        if (personaje!=null) { 
+        if (personaje!=null) {
+            
             BinaryFormatter formatter = new BinaryFormatter();
             string Path = Application.persistentDataPath + "/Jugador.sve";
+            //Debug.Log(Path);
             FileStream stream = new FileStream(Path, FileMode.Create);
 
             Data_Personaje data = personaje;

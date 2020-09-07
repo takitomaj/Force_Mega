@@ -97,7 +97,7 @@ public class sc_slot_mocochila : MonoBehaviour
         if (item.IsConsumible)
         {
             status = "Consumible";
-            if (item.restauraVida!=0) { status = status + "\n" + "Vit: " + item.Dano; }
+            if (item.restauraVida!=0) { status = status + "\n" + "Vit: " + item.restauraVida; }
         }
         else 
         { 
@@ -149,6 +149,10 @@ public class sc_slot_mocochila : MonoBehaviour
                 sc_equipamiento.Instancia.AddItemByID(item, 3);
                 sc_Inventario.Instancia.RemoveItem(item);
             }
+        }else if (item.IsConsumible) 
+        {
+            sc_equipamiento.Instancia.Consumir(item);
+            sc_Inventario.Instancia.RemoveItem(item);
         }
     }
     public void removeTxtStatus()
