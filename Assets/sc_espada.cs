@@ -54,6 +54,7 @@ public class sc_espada : MonoBehaviour
             nextAttacktime = Time.time + 1f / attackrate;
         }
     }
+    
     private void OnDrawGizmosSelected()
     {
         if (swordPoint == null)
