@@ -10,9 +10,12 @@ public class sc_bullet : MonoBehaviour
     public SpriteRenderer sprite;
     public GameObject explocionffect;
     public float lifeTime= 3.0f;
+    public GameObject player;
+    
     // Start is called before the first frame update
     void Start()
     {
+        
         SpriteRenderer S_explo = explocionffect.GetComponent<SpriteRenderer>();
         S_explo.color = new Color(255,255,255,255);
         if (sc_equipamiento.Instancia.items[3] != null)
@@ -68,7 +71,7 @@ public class sc_bullet : MonoBehaviour
 
             if (enemy != null)
             {
-                enemy.takeDamage(dano);
+                player.GetComponent<Personaje>().GanarEXP( enemy.takeDamage(dano));
             }
 
             Destroy(gameObject);

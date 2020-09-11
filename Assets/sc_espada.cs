@@ -48,7 +48,7 @@ public class sc_espada : MonoBehaviour
                 if (enemy != null)
                 {
 
-                    enemy.takeDamage(dano);
+                    player.GanarEXP( enemy.takeDamage(dano));
                 }
             }
             nextAttacktime = Time.time + 1f / attackrate;

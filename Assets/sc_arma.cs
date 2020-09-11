@@ -27,6 +27,7 @@ public class sc_arma : MonoBehaviour
             {
                 player.Shoot();
                 GameObject bala= Instantiate(bullet, firepoint.position, firepoint.rotation);
+                bala.GetComponent<sc_bullet>().player = gameObject;
                 //player.unShoot();
                 if (sc_equipamiento.Instancia.items[3].IDtipo == 1)
                 {
