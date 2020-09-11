@@ -16,6 +16,7 @@ public class sc_Show_equipe : MonoBehaviour
     public float esperaEspada = 0.2f;
     public float esperapintar = 0.1f;
     public float esperaArma = 0.3f;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -100,6 +101,19 @@ public class sc_Show_equipe : MonoBehaviour
         yield return new WaitForSeconds(segundos);
         espada.enabled = false;
     }
+    /*IEnumerator MostrarDano(int i_dano)
+    {
+        dano.enabled = true;
+        dano.text = i_dano + "";
+        if (i_dano <= 10) { dano.fontSize = 5; }
+        if (i_dano > 10 && i_dano <= 100) { dano.fontSize = 7; }
+        if (i_dano > 100) { dano.fontSize = 9; }
+
+        yield return new WaitForSeconds(5);
+
+        //dano.enabled = false;
+
+    }*/
     IEnumerator EspadaArma()
     {
         if (sc_equipamiento.Instancia.items[3] != null)

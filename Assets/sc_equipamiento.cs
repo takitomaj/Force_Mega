@@ -97,12 +97,12 @@ public class sc_equipamiento : MonoBehaviour
             Item itemTemp = items[id];
             items[id] = Newitem;
             sc_Inventario.Instancia.AddItem(itemTemp);
-            Debug.Log("equipado:"+ Newitem.name+" en el slot "+id);
+            
         }
         else
         {
             items[id] = Newitem;
-            Debug.Log("equipado:" + Newitem.name + " en el slot " + id);
+            
         }
         //onItemChangedCallBack.Invoke();
     }

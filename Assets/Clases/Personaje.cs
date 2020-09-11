@@ -24,6 +24,11 @@ public class Personaje : MonoBehaviour
 	public UnityEngine.UI.Image Botas;
 	public Text Nombre;
 
+	public Text dano;
+	public Text vida;
+
+	public GameObject droper;
+	
 	public Data_Personaje stats;
 	public HeltBar Barra_vida;
 	//movimiento
@@ -37,14 +42,16 @@ public class Personaje : MonoBehaviour
 	//interaccion Touch
 	public Camera cam;
 	public Interacuar Focus;
-	public Canvas Inventario_Equipo;
+	public Canvas Canvas_mochila;
 	public Canvas canvas_Pausa;
+	public Canvas barraVida;
+	public int Vida_acumulada;
 
 	public bool derecha = true;
 	
 	void Start()
 	{
-		Inventario_Equipo.enabled = false;
+		Canvas_mochila.enabled = false;
 		
 		cam = Camera.main;
 		//stats = new Data_Personaje(true);
@@ -60,7 +67,59 @@ public class Personaje : MonoBehaviour
 		{
 			canvas_Pausa.enabled = false;
 		}
+		vida.enabled = false;
+		dano.enabled = false;
 	}
+	public void MostrarDano(int i_dano)
+	{
+		dano.enabled = true;
+		dano.rectTransform.transform.position = droper.transform.position;
+
+		Rigidbody2D rb_dano = dano.GetComponent<Rigidbody2D>();
+		dano.text = i_dano+"";
+
+		rb_dano.AddForce(Vector2.up * 4.5f, ForceMode2D.Impulse);
+		int ladop = UnityEngine.Random.Range(1, 100);
+		if (ladop >= 50)
+		{
+			rb_dano.AddForce(Vector2.left * 1, ForceMode2D.Impulse);
+		}
+		else
+		{
+			rb_dano.AddForce(Vector2.right * 1, ForceMode2D.Impulse);
+		}
+		
+		//yield return new WaitForSeconds(10f);
+		//dano.enabled = false;
+
+
+	}
+	
+	public void MostrarVida(int i_Vida)
+	{
+		Vida_acumulada += i_Vida;
+		vida.enabled = true;
+		vida.rectTransform.transform.position = droper.transform.position;
+
+		Rigidbody2D rb_vida = vida.GetComponent<Rigidbody2D>();
+		vida.text = Vida_acumulada + "";
+
+		rb_vida.AddForce(Vector2.up * 4.5f, ForceMode2D.Impulse);
+		int ladop = UnityEngine.Random.Range(1, 100);
+		if (ladop >= 50)
+		{
+			rb_vida.AddForce(Vector2.left * 1, ForceMode2D.Impulse);
+		}
+		else
+		{
+			rb_vida.AddForce(Vector2.right * 1, ForceMode2D.Impulse);
+		}
+			
+		if (stats.vida>=stats.vida_maxima) { Vida_acumulada = 0; }
+		
+	}
+
+
 	public void Espadazo()
 	{
 		anim.SetTrigger("espadazo");
@@ -76,13 +135,13 @@ public class Personaje : MonoBehaviour
 
 	public void InventarioEquipo() 
 	{
-		if (Inventario_Equipo.isActiveAndEnabled) 
+		if (Canvas_mochila.isActiveAndEnabled) 
 		{
-			Inventario_Equipo.enabled = false;
+			Canvas_mochila.enabled = false;
 			
 		} else 
 		{
-			Inventario_Equipo.enabled = true;
+			Canvas_mochila.enabled = true;
 			 
 		}
 	}
@@ -143,6 +202,12 @@ public class Personaje : MonoBehaviour
 
 		SetVida();
 	}
+
+	
+
+	
+
+
 	public void SetFocus(Interacuar newInter)
 	{
 		if (Focus != newInter) {
@@ -257,8 +322,12 @@ public class Personaje : MonoBehaviour
 	public void Recibir_Dano(int dano)
 	{
 		int danoNeto = -dano + stats.Constitucion + sc_equipamiento.Instancia.getModConstitucion();
-		stats.vida = stats.vida - danoNeto;
+		if (danoNeto >= 0) { danoNeto = 0; }
+		stats.vida = danoNeto +stats.vida  ;
 		Barra_vida.SetHelt(stats.vida);
+		//StartCoroutine(MostrarDano_instancia(danoNeto));
+		MostrarDano(danoNeto);
+
 	}
 	public void SetVida() 
 	{
@@ -289,17 +358,21 @@ public class Personaje : MonoBehaviour
 
 	public void Recibir_vida(int vidat) 
 	{
+
+		
 		
 		stats.vida = stats.vida + vidat;
 		if (stats.vida <= stats.vida_maxima) 
 		{
 			Barra_vida.SetHelt(stats.vida);
+			MostrarVida(vidat);
 		}
 		else if(stats.vida > stats.vida_maxima) 
 		{ 
 			stats.vida = stats.vida_maxima;
 			Barra_vida.SetHelt(stats.vida);
 		}
+		
 	}
 
 	public void saveStatus()

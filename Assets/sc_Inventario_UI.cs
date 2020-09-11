@@ -25,8 +25,8 @@ public class sc_Inventario_UI : MonoBehaviour
         equipamiento = sc_equipamiento.Instancia;
 
         Slots = itemParent.GetComponentsInChildren<sc_slot_mocochila>();
-        
 
+        UpdateUI();
     }
 
     // Update is called once per frame
@@ -48,7 +48,7 @@ public class sc_Inventario_UI : MonoBehaviour
     }
    public void UpdateUI()
     {
-        Debug.Log("INventary actualizado");
+       
         for (int i=0;i<Slots.Length;i++) 
         {
             if (i< inventario.items.Count) 

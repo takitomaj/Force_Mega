@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1073558615661823854}
   m_Layer: 0
   m_Name: bullet
-  m_TagString: Untagged
+  m_TagString: Bala
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -152,3 +152,4 @@ MonoBehaviour:
   sprite: {fileID: 1947667016605756019}
   explocionffect: {fileID: 4907988785606957677, guid: 4639e2ff0f0d6414aaa5e9388a21b113,
     type: 3}
+  lifeTime: 3

@@ -8,7 +8,7 @@ public class sc_Item_pickUp : Interacuar
     SpriteRenderer sprite;
     public GameObject objetoselect;
     public SpriteRenderer spriteOS;
-    public int lifeTime = 1000;
+    public int lifeTime = 100;
 
     public void Start()
     {
@@ -19,7 +19,7 @@ public class sc_Item_pickUp : Interacuar
 
         sprite = GetComponent<SpriteRenderer>();
         sprite.color = new Color(item.color[0], item.color[1], item.color[2], item.color[3]);
-       // Destroy(gameObject, lifeTime);
+        Destroy(gameObject, lifeTime);
 
     }
     public void Update()

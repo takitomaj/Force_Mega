@@ -26,6 +26,31 @@ public class sc_bullet : MonoBehaviour
             sprite.color = color_arma;
             
             S_explo.color = color_arma;
+            if (sc_equipamiento.Instancia.items[3].IDtipo == 1)
+            {
+                //pistola
+                lifeTime = 0.3f;
+            }
+            else if (sc_equipamiento.Instancia.items[3].IDtipo == 2)
+            {
+                //buster
+                lifeTime = 0.4f;
+            }
+            else if (sc_equipamiento.Instancia.items[3].IDtipo == 3)
+            {
+                //canon
+                lifeTime = 0.2f;
+            }
+            else if(sc_equipamiento.Instancia.items[3].IDtipo == 4)
+            {
+                //sniper
+                lifeTime = 3.0f;
+            }else if (sc_equipamiento.Instancia.items[3].IDtipo==5) 
+            {
+                //shotgun
+                lifeTime = 0.1f;
+            }
+
         }
         else { 
             dano = 1; 
@@ -36,17 +61,18 @@ public class sc_bullet : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.tag != "Bala") { 
+            Instantiate(explocionffect, transform.position, Quaternion.identity);
 
-        Instantiate(explocionffect, transform.position, Quaternion.identity);
-       
-        Enemy enemy = collision.GetComponent<Enemy>();
+            Enemy enemy = collision.GetComponent<Enemy>();
 
-        if(enemy != null) 
-        {
-            enemy.takeDamage(dano);
+            if (enemy != null)
+            {
+                enemy.takeDamage(dano);
+            }
+
+            Destroy(gameObject);
         }
-        
-        Destroy(gameObject);
     }
 
 

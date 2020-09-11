@@ -46,7 +46,7 @@ public class sc_equipamientoUI : MonoBehaviour
     public void UpdateUI()
     {
         
-        Debug.Log("equipamiento actualizado");
+        
         if (equipamiento.items[0] != null) 
         {
             Slots[8].AddItem(equipamiento.items[0]);

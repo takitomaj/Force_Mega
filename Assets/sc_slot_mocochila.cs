@@ -24,8 +24,7 @@ public class sc_slot_mocochila : MonoBehaviour
         RemoveButton.enabled = true;
         RemoveButton.interactable = true;
         RemoveButton.image.enabled = true;
-        Debug.Log("Visualizando item :" + item.name);
-
+        
     }
     public void Removeitem(Item newItem)
     {
@@ -52,9 +51,10 @@ public class sc_slot_mocochila : MonoBehaviour
        
 
     }
-    public void OnRemoveButton() 
+    public  void OnRemoveButton() 
     {
-        sc_Inventario.Instancia.RemoveItem(item);
+        sc_Inventario.Instancia.RemoveItem(item, true) ;
+
         
     }
     public void ShowAtrivutes() 
@@ -89,6 +89,8 @@ public class sc_slot_mocochila : MonoBehaviour
         RemoveButton.interactable = false;
         RemoveButton.image.enabled = false;
     }
+
+    
 
     public void setTxtStatus() 
     {
@@ -134,25 +136,25 @@ public class sc_slot_mocochila : MonoBehaviour
             if (item.IsCasco)
             {
                 sc_equipamiento.Instancia.AddItemByID(item, 0);
-                sc_Inventario.Instancia.RemoveItem(item);
+                sc_Inventario.Instancia.RemoveItem(item,false);
             }else if (item.IsMeleeW) 
             {
                 sc_equipamiento.Instancia.AddItemByID(item, 1);
-                sc_Inventario.Instancia.RemoveItem(item);
+                sc_Inventario.Instancia.RemoveItem(item, false);
             }else if (item.IsPeto) 
             {
                 sc_equipamiento.Instancia.AddItemByID(item, 2);
-                sc_Inventario.Instancia.RemoveItem(item);
+                sc_Inventario.Instancia.RemoveItem(item, false);
             }
             else if (item.IsRangoW) 
             {
                 sc_equipamiento.Instancia.AddItemByID(item, 3);
-                sc_Inventario.Instancia.RemoveItem(item);
+                sc_Inventario.Instancia.RemoveItem(item, false);
             }
         }else if (item.IsConsumible) 
         {
             sc_equipamiento.Instancia.Consumir(item);
-            sc_Inventario.Instancia.RemoveItem(item);
+            sc_Inventario.Instancia.RemoveItem(item, true);
         }
     }
     public void removeTxtStatus()
