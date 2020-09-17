@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 916537bd5b622914b88f22edf99c6c74, type: 3}
+  m_Name: Pistola_lvl1_item
+  m_EditorClassIdentifier: 
+  nombre: _
+  ID: 0
+  IDtipo: 1
+  Tipo: item
+  icono: {fileID: 21300012, guid: ee33fc0470256994993b0ab8ebe2274b, type: 3}
+  IsDefault: 0
+  color: ff000000ff000000ff000000ff000000
+  IsConsumible: 0
+  restauraVida: 0
+  IsEquipable: 1
+  IsCasco: 0
+  IsPeto: 0
+  IsMeleeW: 0
+  IsRangoW: 1
+  ModFuerza: 0
+  ModConstitucion: 0
+  ModVelocidad: 0
+  Dano: 40

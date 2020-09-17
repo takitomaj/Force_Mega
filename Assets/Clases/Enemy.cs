@@ -31,7 +31,7 @@ public class Enemy : MonoBehaviour
         Instantiate(deathWffect, transform.position, Quaternion.identity);
        
         //spawm item pruebas
-        Debug.Log("SpawmItem( "+lvl+" )");
+        //Debug.Log("SpawmItem( "+lvl+" )");
         if (tipo == 1)//minion
         {
             loot.SpawmItem(1, lvl);

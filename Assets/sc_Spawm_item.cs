@@ -5,6 +5,7 @@ using UnityEngine;
 public class sc_Spawm_item : MonoBehaviour
 {
     public GameObject[] objetos = new GameObject[12];
+    public bool itemEspecifico = false;
     // Start is called before the first frame update
     public void SpawmItem(int Cantidad, int Nivel)
     {
@@ -12,23 +13,43 @@ public class sc_Spawm_item : MonoBehaviour
         //////////////////
 
 
-
-        crearItem(0, Nivel);
-        
-       
-        for (int i = 0; i < Cantidad; i++)
+        if (!itemEspecifico)
         {
-            int item_s = Random.Range(0, objetos.Length);
-            if (item_s <= 9)
+            crearItem(0, Nivel);
+
+
+            for (int i = 0; i < Cantidad; i++)
             {
-                crearItem(item_s, Nivel);
+                int item_s = Random.Range(0, objetos.Length);
+                if (item_s <= 9)
+                {
+                    crearItem(item_s, Nivel);
+                }
             }
         }
-        
+        else 
+        {
+            CrearItemEspecifico();
+        }
     
     }
 
+    public void CrearItemEspecifico() 
+    {
+        GameObject itemIp = Instantiate(objetos[0], transform.position, Quaternion.identity);
+        Rigidbody2D rb_itemp = itemIp.GetComponent<Rigidbody2D>();
 
+        rb_itemp.AddForce(Vector2.up * 5, ForceMode2D.Impulse);
+        int ladop = Random.Range(1, 100);
+        if (ladop >= 50)
+        {
+            rb_itemp.AddForce(Vector2.left * 1, ForceMode2D.Impulse);
+        }
+        else
+        {
+            rb_itemp.AddForce(Vector2.right * 1, ForceMode2D.Impulse);
+        }
+    }
     public void crearItem(int indexItem, int Nivel)
     {
         Item itemp = new Item();

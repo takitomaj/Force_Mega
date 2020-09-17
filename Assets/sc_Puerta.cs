@@ -31,10 +31,23 @@ public class sc_Puerta : MonoBehaviour
         return Todos_encendidos; 
     
     }
+    public bool comprobar_Enemigo() 
+    {
+        bool salida = true;
+        foreach (var enemigo in enemigos)
+        {
+            if (enemigo!=null) 
+            {
+                salida = false;
+            }
+            
+        }
+            return salida;
+    }
     // Update is called once per frame
     void Update()
     {
-        if (comprobar_Botones()) 
+        if (comprobar_Botones() && comprobar_Enemigo()) 
         {
             animador.SetBool("Abierta", true);
             colicion.enabled = false;

@@ -7,7 +7,7 @@ using System;
 public class enemyAI : MonoBehaviour
 {
     public Transform target;
-
+    public bool Vuela = false;
     public float Speed = 600f;
     public float nextWayPointDistance = 3f;
 
@@ -42,11 +42,17 @@ public class enemyAI : MonoBehaviour
                 {
                     if (colider.tag == "Player")
                     {
+                        if (Vuela) 
+                        {
+                            Transform objetivo = colider.gameObject.GetComponent<Transform>();
+                            seeker.StartPath(rb2d.position, objetivo.position, OnPathComplete);// target.position, OnPathComplete);
+                        } else 
+                        { 
+                            Transform objetivo = colider.gameObject.GetComponent<Transform>();
+                            Vector2 vectortarget = new Vector2(objetivo.position.x, rb2d.position.y);
 
-                        Transform objetivo = colider.gameObject.GetComponent<Transform>();
-                        Vector2 vectortarget = new Vector2(objetivo.position.x, rb2d.position.y);
-
-                        seeker.StartPath(rb2d.position, vectortarget, OnPathComplete);// target.position, OnPathComplete);
+                            seeker.StartPath(rb2d.position, vectortarget, OnPathComplete);// target.position, OnPathComplete);
+                        }
                     }
                 }
             }
@@ -78,9 +84,20 @@ public class enemyAI : MonoBehaviour
         { 
             reachedEndOfpath = false;
         }
-        Vector2 direccion = ((Vector2)path.vectorPath[currentWayPoint] - rb2d.position).normalized;
-        direccion.y = 0;
-        Vector2 fuerza = direccion * Speed ;
+
+        Vector2 fuerza;
+        if (Vuela) 
+        {
+            Vector2 direccion = ((Vector2)path.vectorPath[currentWayPoint] - rb2d.position).normalized;
+           
+             fuerza = direccion * Speed;
+        } else 
+        {
+            Vector2 direccion = ((Vector2)path.vectorPath[currentWayPoint] - rb2d.position).normalized;
+            direccion.y = 0;
+             fuerza = direccion * Speed;
+        }
+        
 
         rb2d.AddForce(fuerza,ForceMode2D.Force);
 

@@ -16,8 +16,11 @@ EditorBuildSettings:
     guid: 4fb6a031ca533cc4d8b3de7baca473f3
   - enabled: 1
     path: Assets/Scenes/lvl1.unity
-    guid: 9a7b09b56d10ee943949251b3399896d
+    guid: bfbeaf07e51e70645b84f710fd8cf29c
   - enabled: 1
     path: Assets/Scenes/Opciones.unity
     guid: c916449fb3fa7544f95d7f8dded50146
+  - enabled: 1
+    path: Assets/Scenes/Network_test.unity
+    guid: 68ac017d385ec644891b9b0a98c53740
   m_configObjects: {}

@@ -11,6 +11,7 @@ public class sc_bullet : MonoBehaviour
     public GameObject explocionffect;
     public float lifeTime= 3.0f;
     public GameObject player;
+    public bool isNetworkPlayer = false;
     
     // Start is called before the first frame update
     void Start()
@@ -71,7 +72,13 @@ public class sc_bullet : MonoBehaviour
 
             if (enemy != null)
             {
-                player.GetComponent<Personaje>().GanarEXP( enemy.takeDamage(dano));
+                if (!isNetworkPlayer) { 
+                    player.GetComponent<Personaje>().GanarEXP(enemy.takeDamage(dano));
+                }
+                else 
+                {
+                    player.GetComponent<personaje_MP>().GanarEXP(enemy.takeDamage(dano));
+                }
             }
 
             Destroy(gameObject);
