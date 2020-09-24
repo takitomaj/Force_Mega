@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -52,12 +53,27 @@ public class sc_espada : MonoBehaviour
                 {
 
                     Enemy enemy = colider.GetComponent<Enemy>();
-
+                    sc_boss_lvl1 bosslvl1 = colider.GetComponent<sc_boss_lvl1>(); 
+                    sc_puntoDebil puntodebil = colider.GetComponent<sc_puntoDebil>();
                     if (enemy != null)
                     {
 
                         player.GanarEXP(enemy.takeDamage(dano));
                     }
+                    if (bosslvl1 != null)
+                    {
+
+                        //player.GanarEXP(enemy.takeDamage(dano));
+                        int danoReducido = Convert.ToInt32(dano * 0.20f);
+                        bosslvl1.recivirDano(danoReducido);
+                    }
+                    if (puntodebil != null)
+                    {
+
+                        puntodebil.RecivirDanoCritico(dano);
+                    }
+
+
                 }
                 nextAttacktime = Time.time + 1f / attackrate;
             }

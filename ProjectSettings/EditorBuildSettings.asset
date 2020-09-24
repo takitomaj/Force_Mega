@@ -15,12 +15,27 @@ EditorBuildSettings:
     path: Assets/Scenes/Casa.unity
     guid: 4fb6a031ca533cc4d8b3de7baca473f3
   - enabled: 1
-    path: Assets/Scenes/lvl1.unity
-    guid: bfbeaf07e51e70645b84f710fd8cf29c
+    path: Assets/Scenes/level_Selecter.unity
+    guid: bd4e205e7158ad44b9991384050be7b3
   - enabled: 1
     path: Assets/Scenes/Opciones.unity
     guid: c916449fb3fa7544f95d7f8dded50146
   - enabled: 1
     path: Assets/Scenes/Network_test.unity
     guid: 68ac017d385ec644891b9b0a98c53740
+  - enabled: 1
+    path: Assets/Scenes/lvl1.unity
+    guid: bfbeaf07e51e70645b84f710fd8cf29c
+  - enabled: 1
+    path: Assets/Scenes/lvl2.unity
+    guid: 7f23116efee19f4479fde305b9428a46
+  - enabled: 1
+    path: Assets/Scenes/lvl3.unity
+    guid: c7a6042caf73df944bf2325beabdc0a8
+  - enabled: 1
+    path: Assets/Scenes/lvl4.unity
+    guid: 2652a84e0603d90468eb2aac835f7234
+  - enabled: 1
+    path: Assets/Scenes/lvl5.unity
+    guid: cd4f5f5b11951ad4d961dc20d5feb6e4
   m_configObjects: {}

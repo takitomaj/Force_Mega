@@ -6,6 +6,7 @@ using UnityEngine;
 public class Data_Personaje
 {
     public string Nombre = "";
+    public int escenario = 1;
     //niveles
     public int lvl=1;
     public int Exp = 0;

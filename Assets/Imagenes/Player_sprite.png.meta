@@ -24,6 +24,7 @@ TextureImporter:
     21300038: Player_sprite_19
     21300040: Player_sprite_20
     21300042: Player_sprite_21
+    21300044: Player_sprite_22
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -563,6 +564,26 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: e2d84e1672ad5b04694f9cccc389ee30
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_sprite_22
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 192
+        width: 241
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75004f03cf470e74cbba27320e65aa89
       vertices: []
       indices: 
       edges: []

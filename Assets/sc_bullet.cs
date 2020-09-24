@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -69,7 +70,8 @@ public class sc_bullet : MonoBehaviour
             Instantiate(explocionffect, transform.position, Quaternion.identity);
 
             Enemy enemy = collision.GetComponent<Enemy>();
-
+            sc_boss_lvl1 bosslvl1 = collision.GetComponent<sc_boss_lvl1>();
+            sc_puntoDebil puntoDebil = collision.GetComponent<sc_puntoDebil>();
             if (enemy != null)
             {
                 if (!isNetworkPlayer) { 
@@ -80,6 +82,21 @@ public class sc_bullet : MonoBehaviour
                     player.GetComponent<personaje_MP>().GanarEXP(enemy.takeDamage(dano));
                 }
             }
+            if (bosslvl1 !=null) 
+            {
+                int danoArmadura = Convert.ToInt32( dano * 0.10f);
+
+                player.GetComponent<Personaje>().GanarEXP(
+                    bosslvl1.recivirDano(danoArmadura)
+                );
+            }
+            if (puntoDebil != null) 
+            {
+                player.GetComponent<Personaje>().GanarEXP(
+                    puntoDebil.RecivirDanoCritico(dano)
+                );
+            }
+
 
             Destroy(gameObject);
         }

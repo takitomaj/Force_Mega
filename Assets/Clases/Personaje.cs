@@ -46,6 +46,7 @@ public class Personaje : MonoBehaviour
 	public Canvas canvas_Pausa;
 	public Canvas barraVida;
 	public int Vida_acumulada;
+	public Animator lvlUp_animator;
 
 	public bool derecha = true;
 	
@@ -344,12 +345,14 @@ public class Personaje : MonoBehaviour
 		{
 			stats.Lvl_UP();
 			stats.vida = stats.vida_maxima;
+			lvlUp_animator.SetTrigger("lvlUp");
 		}
 		else if (stats.Next_lvl < expTotal)
 		{
 			int remanente = expTotal - stats.Next_lvl;
 			stats.Lvl_UP();
 			stats.vida = stats.vida_maxima;
+			lvlUp_animator.SetTrigger("lvlUp");
 			GanarEXP(remanente);
 		}
 
