@@ -8,7 +8,7 @@ public class sc_plataforma : MonoBehaviour
     public bool Se_mueveve =false;
     public bool TieneComportamiento = false;
     int limInferior = 0;
-    int contador = 0;
+    public int contador = 0;
     public int limSuperiro =1000;
     public bool horizontal = false;
     public bool vertical = true;

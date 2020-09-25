@@ -96095,6 +96095,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5486079161985792670, guid: 343f51c26ed0d364a82f0365020af392,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 10.74
+      objectReference: {fileID: 0}
     - target: {fileID: 5486079161793016234, guid: 343f51c26ed0d364a82f0365020af392,
         type: 3}
       propertyPath: lvlUp_animator

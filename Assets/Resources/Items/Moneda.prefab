@@ -97,7 +97,7 @@ MonoBehaviour:
   radioInteraccion: 1.5
   player: {fileID: 0}
   InteraccionTransform: {fileID: 0}
-  item: {fileID: 0}
+  item: {fileID: 11400000, guid: 83b94ee827ea3cf4c81d6e267d383d1a, type: 2}
   objetoselect: {fileID: 0}
   spriteOS: {fileID: 6326413306109103765}
   lifeTime: 1000

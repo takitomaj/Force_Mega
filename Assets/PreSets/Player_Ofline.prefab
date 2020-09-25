@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2481632877617566228}
   - component: {fileID: 119536967268754489}
   m_Layer: 0
-  m_Name: lvlUp_ps_6
+  m_Name: lvlUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,7 +29,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children: []
   m_Father: {fileID: 5486079161793016213}
-  m_RootOrder: 7
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &119536967268754489
 SpriteRenderer:
@@ -1862,7 +1862,7 @@ RectTransform:
   - {fileID: 5486079160512807334}
   - {fileID: 5486079161556227048}
   m_Father: {fileID: 5486079161793016213}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -6004,7 +6004,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5486079161793016213}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5486079160975123609
 GameObject:
@@ -6460,7 +6460,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5486079161793016213}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5486079161024744896
 GameObject:
@@ -8604,7 +8604,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5486079161793016213}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5486079161302936389
 GameObject:
@@ -9298,7 +9298,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children: []
   m_Father: {fileID: 5486079161793016213}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5486079161352816305
 MonoBehaviour:
@@ -12510,7 +12510,7 @@ Transform:
   - {fileID: 5486079160634724398}
   - {fileID: 5486079160897307058}
   m_Father: {fileID: 5486079161793016213}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5486079161672945860
 GameObject:
@@ -13618,6 +13618,7 @@ Transform:
   m_LocalPosition: {x: -4.65, y: -2.67, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children:
+  - {fileID: 2481632877617566228}
   - {fileID: 5486079160469183768}
   - {fileID: 5486079161985792670}
   - {fileID: 5486079161288591413}
@@ -13625,7 +13626,6 @@ Transform:
   - {fileID: 5486079161016195593}
   - {fileID: 5486079161666831518}
   - {fileID: 5486079161352816307}
-  - {fileID: 2481632877617566228}
   m_Father: {fileID: 5486079160759502281}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -13933,6 +13933,7 @@ MonoBehaviour:
   canvas_Pausa: {fileID: 5486079160634724387}
   barraVida: {fileID: 5486079160469183749}
   Vida_acumulada: 0
+  lvlUp_animator: {fileID: 0}
   derecha: 1
 --- !u!1 &5486079161793260023
 GameObject:
@@ -15731,7 +15732,7 @@ RectTransform:
   - {fileID: 5486079161493739897}
   - {fileID: 5486079161125729029}
   m_Father: {fileID: 5486079161793016213}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
