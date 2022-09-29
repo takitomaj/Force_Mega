@@ -1,20 +1,42 @@
 fileFormatVersion: 2
 guid: a1308a022b5bf154fa3f593673fc810f
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: curador_0
-    21300002: curador_1
-    21300004: curador_2
-    21300006: curador_3
-    21300008: curador_4
-    21300010: curador_5
-    21300012: curador_6
-    21300014: curador_7
-    21300016: curador_8
-    21300018: curador_9
-    21300020: curador_10
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: curador_0
+  - first:
+      213: 21300002
+    second: curador_1
+  - first:
+      213: 21300004
+    second: curador_2
+  - first:
+      213: 21300006
+    second: curador_3
+  - first:
+      213: 21300008
+    second: curador_4
+  - first:
+      213: 21300010
+    second: curador_5
+  - first:
+      213: 21300012
+    second: curador_6
+  - first:
+      213: 21300014
+    second: curador_7
+  - first:
+      213: 21300016
+    second: curador_8
+  - first:
+      213: 21300018
+    second: curador_9
+  - first:
+      213: 21300020
+    second: curador_10
   externalObjects: {}
-  serializedVersion: 9
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -34,6 +56,8 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -42,9 +66,9 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
-    aniso: -1
-    mipBias: -100
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -65,11 +89,16 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
+  cookieLightType: 1
   platformSettings:
-  - serializedVersion: 2
+  - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -80,7 +109,8 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -91,7 +121,8 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
     buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -102,7 +133,8 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
     buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -113,6 +145,19 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -132,6 +177,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 9b8c395b23d8ba443b2bfcc585c63fa7
+      internalID: 21300000
       vertices: []
       indices: 
       edges: []
@@ -152,6 +198,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 25cd60a35f3cd0f45aa85c6fa4211a1d
+      internalID: 21300002
       vertices: []
       indices: 
       edges: []
@@ -172,6 +219,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 343253ca7f924904eb446887cb3fa086
+      internalID: 21300004
       vertices: []
       indices: 
       edges: []
@@ -192,6 +240,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: bd6182c8b0efd2e498e84d34722fc0a1
+      internalID: 21300006
       vertices: []
       indices: 
       edges: []
@@ -212,6 +261,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 08cec7909403164449849cfd1fd380fb
+      internalID: 21300008
       vertices: []
       indices: 
       edges: []
@@ -232,6 +282,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 44ddf4387d2dec34cbdae886ed767cc2
+      internalID: 21300010
       vertices: []
       indices: 
       edges: []
@@ -252,6 +303,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: d0409bfc1f945264e88d81ed78689955
+      internalID: 21300012
       vertices: []
       indices: 
       edges: []
@@ -272,6 +324,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 07278f9a6ee0ef94592383852b3fea5a
+      internalID: 21300014
       vertices: []
       indices: 
       edges: []
@@ -292,6 +345,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: b3f43d4647c7e0947a7f97342be479ab
+      internalID: 21300016
       vertices: []
       indices: 
       edges: []
@@ -312,6 +366,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: c1e754851673d224797a3259560eac23
+      internalID: 21300018
       vertices: []
       indices: 
       edges: []
@@ -332,6 +387,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 764da70cc48fafb408b43123434dd516
+      internalID: 21300020
       vertices: []
       indices: 
       edges: []
@@ -340,10 +396,24 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 8a5b677160c17e94cb32a0a668efc713
+    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      curador_2: 21300004
+      curador_3: 21300006
+      curador_9: 21300018
+      curador_4: 21300008
+      curador_0: 21300000
+      curador_5: 21300010
+      curador_7: 21300014
+      curador_1: 21300002
+      curador_10: 21300020
+      curador_8: 21300016
+      curador_6: 21300012
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
