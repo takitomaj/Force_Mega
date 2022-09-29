@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Experimental.PlayerLoop;
 using UnityEngine.UI;
 
 public class sc_equipamiento : MonoBehaviour
@@ -10,7 +9,7 @@ public class sc_equipamiento : MonoBehaviour
     public static sc_equipamiento Instancia;
     public Transform jugador;
     Personaje Personaje;
-    personaje_MP personajeMP;
+
     public Text statusText;
     public delegate void OnItemChaged();
     public OnItemChaged onItemChangedCallBack;
@@ -192,37 +191,7 @@ public class sc_equipamiento : MonoBehaviour
     // Update is called once per frame
     public void UpdateStatus(bool multiplayer)
     {
-        if (multiplayer) { 
-            personajeMP = jugador.GetComponent<personaje_MP>();
-            int sumaFuerza = personajeMP.stats.Fuerza + getModFuerza();
-            int sumaConstitucion = personajeMP.stats.Constitucion + getModConstitucion();
-            int sumaVel = personajeMP.stats.Velocidad + getModVelocidad();
-            int rango = 1;
-            int melee = personajeMP.stats.Fuerza + personajeMP.stats.Constitucion + getModFuerza();
-            int melee_total = 0;
-            int dano_arma_melee = 0;
-            if (sc_equipamiento.Instancia.items[3] != null)
-            {
-                rango = sc_equipamiento.Instancia.items[3].Dano;
-            }
-            if (sc_equipamiento.Instancia.items[1] != null)
-            {
-                dano_arma_melee = sc_equipamiento.Instancia.items[1].Dano;
-            }
-            melee_total = melee + dano_arma_melee;
-            statusText.text = personajeMP.stats.Nombre + " lvl. " + personajeMP.stats.lvl + "";
-            statusText.text = statusText.text + "\n  Exp:  " + personajeMP.stats.Exp + " / " + personajeMP.stats.Next_lvl;
-            statusText.text = statusText.text + "\n  Vida:  " + personajeMP.stats.vida + " / " + personajeMP.stats.vida_maxima;
-
-            statusText.text = statusText.text + "\n  frz: " + getModFuerza() + " + " + personajeMP.stats.Fuerza + "  = " + sumaFuerza + "";
-            statusText.text = statusText.text + "\n  def: " + getModConstitucion() + " + " + personajeMP.stats.Constitucion + "  = " + sumaConstitucion + "";
-            statusText.text = statusText.text + "\n  vel: " + getModVelocidad() + " + " + personajeMP.stats.Velocidad + "  = " + sumaVel + "";
-            statusText.text = statusText.text + "\n";
-            statusText.text = statusText.text + "\n  Rango: " + rango;
-            statusText.text = statusText.text + "\n  melee: " + dano_arma_melee + " + " + melee + "  = " + melee_total;
-        }
-        else 
-        {
+        
             Personaje = jugador.GetComponent<Personaje>();
             int sumaFuerza = Personaje.stats.Fuerza + getModFuerza();
             int sumaConstitucion = Personaje.stats.Constitucion + getModConstitucion();
@@ -250,7 +219,7 @@ public class sc_equipamiento : MonoBehaviour
             statusText.text = statusText.text + "\n";
             statusText.text = statusText.text + "\n  Rango: " + rango;
             statusText.text = statusText.text + "\n  melee: " + dano_arma_melee + " + " + melee + "  = " + melee_total;
-        }
+        
 
 
 

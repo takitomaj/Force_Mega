@@ -74,13 +74,9 @@ public class sc_bullet : MonoBehaviour
             sc_puntoDebil puntoDebil = collision.GetComponent<sc_puntoDebil>();
             if (enemy != null)
             {
-                if (!isNetworkPlayer) { 
+                
                     player.GetComponent<Personaje>().GanarEXP(enemy.takeDamage(dano));
-                }
-                else 
-                {
-                    player.GetComponent<personaje_MP>().GanarEXP(enemy.takeDamage(dano));
-                }
+                
             }
             if (bosslvl1 !=null) 
             {

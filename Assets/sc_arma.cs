@@ -8,7 +8,7 @@ public class sc_arma : MonoBehaviour
     public Transform firepoint;
     public GameObject bullet;
     Personaje player;
-    personaje_MP playerMP;
+
     public float Cadencia = 4f;
     bool disparado = false;
     public float attackrate = 2f;
@@ -17,16 +17,9 @@ public class sc_arma : MonoBehaviour
     public bool isNetworckPlayer = false;
     void Start()
     {
-        if (!isNetworckPlayer) 
-        { 
+     
             player = gameObject.GetComponent<Personaje>();
-        }
-        else 
-        {
-            playerMP= gameObject.GetComponent<personaje_MP>();
-
-
-        }
+        
     }
 
     public void Dispara()
@@ -82,7 +75,7 @@ public class sc_arma : MonoBehaviour
             {
                 if (!disparado)
                 {
-                    playerMP.Shoot();
+                    
                     GameObject bala = Instantiate(bullet, firepoint.position, firepoint.rotation);
                     bala.GetComponent<sc_bullet>().player = gameObject;
                     bala.GetComponent<sc_bullet>().isNetworkPlayer = true;
